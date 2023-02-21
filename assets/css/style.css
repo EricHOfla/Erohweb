@@ -198,7 +198,7 @@ header {
 
 @media (min-width: 782px) {
  .hero{
-   background-image: url('D:/Projects/MINE/Eroh Tech/assets/images/bg.jpeg');
+   background-image: url('/assets/images/bg.jpeg');
    }
    .hero h1 {
      font-size: 3.5rem;
@@ -265,7 +265,7 @@ header {
 .header-banner {
   height: 60vh;
   width: 100%;
-  background-image: url('D:/Projects/MINE/Eroh Tech/assets/images/5.jpg');
+  background-image: url('/assets/images/5.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
