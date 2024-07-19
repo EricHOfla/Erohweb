@@ -267,6 +267,9 @@ header .navbar .cta-btn a:hover, header .navbar .ctj-btn a:hover, .hero .ctj-btn
    margin-bottom: 20px;
    color: #007bff;
 }
+.card img{
+   height: 300px;
+}
 
 .project-header {
    background-color: #f8f9fa;
@@ -330,6 +333,10 @@ header .navbar .cta-btn a:hover, header .navbar .ctj-btn a:hover, .hero .ctj-btn
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
    border-radius: 8px;
    text-align: center;
+}
+
+.course-box img{
+   height: 400px;
 }
 
 .course-box h5 {
