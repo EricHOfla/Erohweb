@@ -132,6 +132,8 @@ textarea:focus-visible {
 
 .section.muted, .muted {
   background: var(--surface-alt);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 /* ==========================================================================
@@ -955,6 +957,18 @@ p:last-child {
 .feature {
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature:hover {
+  transform: translateY(-4px);
+  border-color: var(--red-border);
+  box-shadow: var(--shadow-hover);
 }
 
 .feature-img {
