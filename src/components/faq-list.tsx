@@ -1,0 +1,2 @@
+"use client";import {useState} from "react";import {ChevronDown} from "lucide-react";import {faqs} from "@/data/content";
+export function FaqList(){const[active,setActive]=useState<number|null>(0);return <div className="faq-list">{faqs.map(([q,a],i)=><article className="faq-item" key={q}><button aria-expanded={active===i} onClick={()=>setActive(active===i?null:i)}>{q}<ChevronDown size={18}/></button>{active===i&&<p>{a}</p>}</article>)}</div>}
