@@ -14,6 +14,7 @@ import {
   Boxes,
 } from "lucide-react";
 import { services, projects } from "@/data/content";
+import { TechStack } from "@/components/tech-stack";
 
 const icons = [MonitorSmartphone, Code2, Smartphone, Settings2, Palette, TrendingUp];
 
@@ -111,6 +112,9 @@ export default function Home() {
             <b>Learning & innovation</b>
             <small>building skills and exploring what is next</small>
           </div>
+        </div>
+        <div className="container">
+          <TechStack />
         </div>
       </section>
 
