@@ -1,0 +1,3 @@
+import type {Metadata} from "next";import type {ReactNode} from "react";import "./globals.css";import {Header} from "@/components/header";import {Footer} from "@/components/footer";import {site} from "@/data/content";
+export const metadata:Metadata={metadataBase:new URL("https://erohweb.vercel.app"),title:{default:"EROH Technology | Digital solutions that move you forward",template:"%s | EROH Technology"},description:site.description,applicationName:site.name,openGraph:{title:site.name,description:site.description,type:"website",locale:"en_RW"},icons:{icon:"/favicon.svg"},robots:{index:true,follow:true}};
+export default function RootLayout({children}:{children:ReactNode}){return <html lang="en"><body><Header/><main>{children}</main><Footer/></body></html>}
