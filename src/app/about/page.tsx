@@ -3,7 +3,6 @@ import type { LucideIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Target, Lightbulb, Handshake, Compass } from "lucide-react";
-import { Subnav, companySubnavItems } from "@/components/subnav";
 
 export const metadata: Metadata = {
   title: "About us",
@@ -50,9 +49,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* Contextual Subnavbar for Company Section */}
-      <Subnav items={companySubnavItems} label="Company Sections" />
 
       <section className="section">
         <div className="container story">
