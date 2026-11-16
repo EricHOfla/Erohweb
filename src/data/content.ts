@@ -182,6 +182,7 @@ export const projects: ProjectItem[] = [
       "Production environment provisioning, build automation, web server configuration, and continuous deployment workflows for Chemovigi. Please note: This work represents deployment and infrastructure support only and is not presented as a project developed by EROH Tech.",
     note: "Deployment only; not presented as a project developed by EROH Tech.",
     link: "",
+    liveLink: "https://chemovigi.com/",
     tags: ["Cloud Deployment", "DevOps", "Infrastructure"],
   },
   {
@@ -196,6 +197,7 @@ export const projects: ProjectItem[] = [
       "Environment setup, web server hosting, and production deployment configuration for Health Lab. Please note: This work represents deployment and hosting support only and is not presented as a project developed by EROH Tech.",
     note: "Deployment only; not presented as a project developed by EROH Tech.",
     link: "",
+    liveLink: "https://healthlab.rw/",
     tags: ["Production Hosting", "Cloud Infrastructure", "Deployment"],
   },
   {
