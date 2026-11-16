@@ -71,7 +71,10 @@ export function ProjectList() {
         <div className="project-grid">
           {rows.map((p) => (
             <article className="project-card" key={p.slug}>
-              <div className="project-card-status">{p.status}</div>
+              <Link className="project-image project-placeholder" href={`/projects/${p.slug}`} aria-label={`View ${p.title} project`}>
+                <span className="project-code-mark" aria-hidden="true">{"</>"}</span>
+                <span className="project-status-pill">{p.status}</span>
+              </Link>
               <div className="project-body">
                 <small>{p.type}</small>
                 <h3>
