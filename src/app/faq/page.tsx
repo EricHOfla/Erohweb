@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { Subnav, companySubnavItems } from "@/components/subnav";
 import { FaqList } from "@/components/faq-list";
 
 export const metadata: Metadata = {
@@ -24,9 +23,6 @@ export default function FAQ() {
           </div>
         </div>
       </section>
-
-      {/* Contextual Subnavbar for Company Section */}
-      <Subnav items={companySubnavItems} label="Company Sections" />
 
       <section className="section">
         <div className="container faq-grid">
