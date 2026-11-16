@@ -46,6 +46,10 @@ export const site = {
   location: "Kigali, Rwanda",
   description:
     "EROH Technology is a Kigali-based technology company working across digital services, products, training and innovation.",
+  social: {
+    github: "https://github.com/EricHOfla",
+    linkedin: "https://www.linkedin.com/in/erichofla",
+  },
 };
 
 export const nav = [
@@ -421,6 +425,41 @@ export const courses = [
       "Content optimisation",
       "Measurement basics",
     ],
+  },
+];
+
+export interface TestimonialItem {
+  quote: string;
+  name: string;
+  role: string;
+  org: string;
+  initials: string;
+}
+
+export const testimonials: TestimonialItem[] = [
+  {
+    quote:
+      "EROH Technology built our administration platform from scratch and the results were beyond our expectations. Clear communication, solid delivery.",
+    name: "NPCR Rwanda",
+    role: "Platform Partner",
+    org: "NPCRwanda",
+    initials: "NR",
+  },
+  {
+    quote:
+      "They handled the full deployment of our health platform reliably and professionally. We would work with them again without hesitation.",
+    name: "Health Lab Team",
+    role: "Deployment Client",
+    org: "Health Lab",
+    initials: "HL",
+  },
+  {
+    quote:
+      "The E-ROH Shop showcases exactly what a modern e-commerce experience should feel like. Fast, clean, and user-first.",
+    name: "Internal Review",
+    role: "Product Launch",
+    org: "EROH Technology",
+    initials: "ET",
   },
 ];
 

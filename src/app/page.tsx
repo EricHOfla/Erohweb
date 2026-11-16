@@ -13,7 +13,7 @@ import {
   Sparkles,
   Boxes,
 } from "lucide-react";
-import { services, projects, impactMetrics } from "@/data/content";
+import { services, projects, impactMetrics, testimonials } from "@/data/content";
 import { TechStack } from "@/components/tech-stack";
 
 const icons = [MonitorSmartphone, Code2, Smartphone, Settings2, Palette, TrendingUp];
@@ -305,6 +305,31 @@ export default function Home() {
             <Link className="text-link" href="/training">
               Explore training <ArrowUpRight size={16} />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 7b. Testimonials: Light Canvas */}
+      <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">CLIENT VOICES</span>
+            <h2>What people say about working with us.</h2>
+          </div>
+          <div className="testimonials-grid">
+            {testimonials.map((t) => (
+              <article className="testimonial-card" key={t.name}>
+                <div className="testimonial-quote-mark" aria-hidden="true">"</div>
+                <p className="testimonial-quote">{t.quote}</p>
+                <div className="testimonial-author">
+                  <div className="testimonial-avatar">{t.initials}</div>
+                  <div>
+                    <b className="testimonial-name">{t.name}</b>
+                    <small className="testimonial-role">{t.role} · {t.org}</small>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
