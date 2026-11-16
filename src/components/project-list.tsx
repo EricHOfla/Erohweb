@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ArrowUpRight, Search } from "lucide-react";
@@ -72,10 +71,7 @@ export function ProjectList() {
         <div className="project-grid">
           {rows.map((p) => (
             <article className="project-card" key={p.slug}>
-              <Link className="project-image" href={`/projects/${p.slug}`}>
-                <Image src={p.image} alt={p.title} fill sizes="(max-width:700px) 100vw, 33vw" />
-                <span>{p.status}</span>
-              </Link>
+              <div className="project-card-status">{p.status}</div>
               <div className="project-body">
                 <small>{p.type}</small>
                 <h3>
