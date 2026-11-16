@@ -84,10 +84,19 @@ export default async function Project({
                     </Link>
                   ) : (
                     <a className="button" href={p.link} target="_blank" rel="noreferrer">
-                      {p.link.includes("github.com") ? "View on GitHub" : "Visit live showcase"}{" "}
-                      <ExternalLink size={16} />
+                      Visit project <ExternalLink size={16} />
                     </a>
                   )
+                )}
+                {p.liveLink && (
+                  <a className="button" href={p.liveLink} target="_blank" rel="noreferrer">
+                    Visit live website <ExternalLink size={16} />
+                  </a>
+                )}
+                {p.sourceLink && (
+                  <a className="button" href={p.sourceLink} target="_blank" rel="noreferrer">
+                    View source on GitHub <ExternalLink size={16} />
+                  </a>
                 )}
                 <CopyBadge
                   text={`https://erohweb.vercel.app/projects/${p.slug}`}
