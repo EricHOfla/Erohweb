@@ -22,17 +22,20 @@ export function ProjectList() {
   }, []);
 
   const rows = useMemo(() => {
-    return projects.filter(
-      (p) =>
-        (filter === "All" || p.type === filter) &&
-        `${p.title} ${p.summary}`.toLowerCase().includes(q.toLowerCase())
-    );
+    const query = q.toLowerCase().trim();
+    return projects.filter((p) => {
+      const matchesFilter = filter === "All" || p.type === filter;
+      const searchable =
+        `${p.title} ${p.summary} ${p.type} ${p.status} ${p.tags.join(" ")} ${p.note || ""}`.toLowerCase();
+      const matchesSearch = query === "" || searchable.includes(query);
+      return matchesFilter && matchesSearch;
+    });
   }, [filter, q]);
 
   return (
     <>
       <div className="project-tools">
-        {/* Project Subnavbar Filter Chips with Live Badges */}
+        {/* Project Filter Chips with Live Category Badges */}
         <div className="filters" role="tablist" aria-label="Project Categories">
           {categories.map((c) => (
             <button
@@ -79,6 +82,7 @@ export function ProjectList() {
                   <Link href={`/projects/${p.slug}`}>{p.title}</Link>
                 </h3>
                 <p>{p.summary}</p>
+                {p.note && <div className="project-note-badge">{p.note}</div>}
                 <Link className="text-link" href={`/projects/${p.slug}`}>
                   Explore project <ArrowUpRight size={16} />
                 </Link>

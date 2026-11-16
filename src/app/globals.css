@@ -1531,6 +1531,61 @@ p:last-child {
   color: var(--color-dark);
 }
 
+/* Project Attribution & Scope Notice */
+.project-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  background: rgba(225, 29, 72, 0.06);
+  border: 1px solid rgba(225, 29, 72, 0.28);
+  margin: 22px 0;
+}
+
+.project-disclaimer .disclaimer-icon {
+  color: var(--color-red);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.project-disclaimer strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 750;
+  color: var(--color-red);
+  margin-bottom: 3px;
+}
+
+.project-disclaimer p {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #334155;
+  margin: 0;
+}
+
+.notice-highlight {
+  font-size: 12px !important;
+  color: var(--color-red) !important;
+  line-height: 1.45;
+  font-weight: 600 !important;
+  margin-top: 2px;
+}
+
+.project-note-badge {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: rgba(225, 29, 72, 0.08);
+  color: var(--color-red);
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.4;
+  border-left: 2.5px solid var(--color-red);
+}
+
 /* --------------------------------------------------------------------------
    TEAM GRID
    -------------------------------------------------------------------------- */

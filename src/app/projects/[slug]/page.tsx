@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, ExternalLink, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, Clock, ShieldAlert } from "lucide-react";
 import { CopyBadge } from "@/components/copy-badge";
 import { projects } from "@/data/content";
 
@@ -65,10 +65,22 @@ export default async function Project({
               <span className="eyebrow">OVERVIEW</span>
               <h2>About this project</h2>
               <p>{p.detail}</p>
+
+              {p.note && (
+                <div className="project-disclaimer">
+                  <ShieldAlert size={18} className="disclaimer-icon" />
+                  <div>
+                    <strong>Attribution & Scope Notice:</strong>
+                    <p>{p.note}</p>
+                  </div>
+                </div>
+              )}
+
               <div className="project-actions">
                 {p.link && (
                   <a className="button" href={p.link} target="_blank" rel="noreferrer">
-                    Visit live showcase <ExternalLink size={16} />
+                    {p.link.includes("github.com") ? "View on GitHub" : "Visit live showcase"}{" "}
+                    <ExternalLink size={16} />
                   </a>
                 )}
                 <CopyBadge
@@ -86,6 +98,12 @@ export default async function Project({
               <b>{p.status}</b>
               <small>Focus</small>
               <b>{p.tags.join(", ")}</b>
+              {p.note && (
+                <>
+                  <small>Notice</small>
+                  <b className="notice-highlight">{p.note}</b>
+                </>
+              )}
             </aside>
           </div>
 
