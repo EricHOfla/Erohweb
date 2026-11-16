@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
+import "./subnav.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FloatingActions } from "@/components/floating-actions";
