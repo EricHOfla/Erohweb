@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, ExternalLink, Clock, ShieldAlert } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, Clock, ShieldAlert, ArrowUpRight } from "lucide-react";
 import { CopyBadge } from "@/components/copy-badge";
 import { projects } from "@/data/content";
 
@@ -78,10 +78,16 @@ export default async function Project({
 
               <div className="project-actions">
                 {p.link && (
-                  <a className="button" href={p.link} target="_blank" rel="noreferrer">
-                    {p.link.includes("github.com") ? "View on GitHub" : "Visit live showcase"}{" "}
-                    <ExternalLink size={16} />
-                  </a>
+                  p.link.startsWith("/") ? (
+                    <Link className="button" href={p.link}>
+                      View in Products <ArrowUpRight size={16} />
+                    </Link>
+                  ) : (
+                    <a className="button" href={p.link} target="_blank" rel="noreferrer">
+                      {p.link.includes("github.com") ? "View on GitHub" : "Visit live showcase"}{" "}
+                      <ExternalLink size={16} />
+                    </a>
+                  )
                 )}
                 <CopyBadge
                   text={`https://erohweb.vercel.app/projects/${p.slug}`}

@@ -182,8 +182,8 @@ export default function Home() {
             <small>starting with real problems and needs</small>
           </div>
           <div>
-            <b>inzuSync</b>
-            <small>an EROH Technology product initiative</small>
+            <b>inzuSync &amp; E-ROH Shop</b>
+            <small>EROH Technology product initiatives</small>
           </div>
           <div>
             <b>Open to ideas</b>

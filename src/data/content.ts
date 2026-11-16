@@ -104,6 +104,17 @@ export const services = [
 
 export const products = [
   {
+    slug: "eroh-shop",
+    name: "E-ROH Shop",
+    kind: "EROH Technology product",
+    status: "E-commerce platform",
+    summary:
+      "A modern, high-performance e-commerce shopping platform developed by EROH Technology for digital commerce and retail.",
+    description:
+      "E-ROH Shop is an EROH Technology proprietary e-commerce shopping platform engineered for fast, secure online retail. It features dynamic product catalogues, instant search, streamlined checkout workflows, and automated inventory management architecture.",
+    cta: "Enquire about E-ROH Shop",
+  },
+  {
     slug: "inzusync",
     name: "inzuSync",
     kind: "EROH Technology product",
@@ -131,6 +142,19 @@ export const projects: ProjectItem[] = [
     tags: ["Developer Portfolio", "Tech Hub", "Web Development"],
   },
   {
+    slug: "eroh-shop",
+    title: "E-ROH Shop",
+    type: "EROH Product",
+    status: "Proprietary Product",
+    image: "/images/pro.jpg",
+    summary:
+      "E-commerce shopping platform developed as an in-house EROH Technology product.",
+    detail:
+      "E-ROH Shop is an in-house e-commerce shopping platform developed by EROH Technology. It features dynamic product discovery, modern cart and checkout flows, and comprehensive administrative controls.",
+    link: "/products",
+    tags: ["EROH Product", "E-commerce", "Shopping Platform"],
+  },
+  {
     slug: "npcrwanda",
     title: "NPCRwanda",
     type: "Developed Project",
@@ -141,18 +165,6 @@ export const projects: ProjectItem[] = [
       "A tailored digital platform engineered for NPCRwanda combining an accessible public website with a secure administrative control system for managing organizational communications, public notices, and content updates.",
     link: "",
     tags: ["Website", "Administration Platform", "Full-Stack Development"],
-  },
-  {
-    slug: "eroh-shop",
-    title: "E-ROH Shop",
-    type: "Developed Project",
-    status: "E-commerce Platform",
-    image: "/images/pro.jpg",
-    summary: "E-commerce shopping platform.",
-    detail:
-      "A performant, user-centered online shopping platform featuring real-time product discovery, responsive shopping cart, secure checkout workflows, and scalable inventory administration architecture.",
-    link: "",
-    tags: ["E-commerce", "Shopping Platform", "Online Store"],
   },
   {
     slug: "progallery",
