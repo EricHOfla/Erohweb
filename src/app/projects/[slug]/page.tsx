@@ -1,7 +1,17 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, ExternalLink, ShieldAlert, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ExternalLink,
+  Clock,
+  ShieldAlert,
+  ArrowUpRight,
+  CheckCircle2,
+  Cpu,
+} from "lucide-react";
 import { CopyBadge } from "@/components/copy-badge";
 import { projects } from "@/data/content";
 
@@ -35,13 +45,20 @@ export default async function Project({
   const prevProject = index > 0 ? projects[index - 1] : null;
   const nextProject = index < projects.length - 1 ? projects[index + 1] : null;
 
+  const whatsappText = encodeURIComponent(
+    `Hello EROH Tech, I viewed your project "${p.title}" and would like to discuss a similar technical solution.`
+  );
+  const whatsappUrl = `https://wa.me/250785263931?text=${whatsappText}`;
+
   return (
     <>
       <section className="page-hero">
         <div className="container">
           <div className="case-study-meta">
             <span className="eyebrow light">{p.type}</span>
-            <span className="reading-time">{p.status}</span>
+            <span className="reading-time">
+              <Clock size={13} /> 3 min case study
+            </span>
           </div>
           <h1>{p.title}</h1>
           <p>{p.summary}</p>
@@ -53,17 +70,21 @@ export default async function Project({
 
       <section className="section">
         <div className="container detail">
+          <div className="detail-img">
+            <Image src={p.image} alt={p.title} fill priority sizes="100vw" />
+          </div>
+
           <div className="detail-grid">
-            <div className="project-detail-content">
+            <div className="project-detail-main">
               <section className="project-detail-section">
-                <span className="eyebrow">PROJECT OVERVIEW</span>
+                <span className="eyebrow">OVERVIEW</span>
                 <h2>About the work</h2>
                 <p>{p.detail}</p>
               </section>
 
               {p.highlights?.length ? (
                 <section className="project-detail-section">
-                  <span className="eyebrow">KEY AREAS</span>
+                  <span className="eyebrow">KEY DELIVERABLES</span>
                   <h2>What the work covers</h2>
                   <ul className="project-highlight-list">
                     {p.highlights.map((item) => (
@@ -76,10 +97,25 @@ export default async function Project({
                 </section>
               ) : null}
 
+              {p.technologies?.length ? (
+                <section className="project-detail-section">
+                  <span className="eyebrow">TECH STACK</span>
+                  <h2>Technology architecture</h2>
+                  <div className="tech-chips">
+                    {p.technologies.map((tech) => (
+                      <span className="tech-chip" key={tech}>
+                        <Cpu size={13} />
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </section>
+              ) : null}
+
               {p.role ? (
                 <section className="project-detail-section">
                   <span className="eyebrow">OUR INVOLVEMENT</span>
-                  <h2>EROH Technology's role</h2>
+                  <h2>EROH Technology&apos;s role</h2>
                   <p>{p.role}</p>
                 </section>
               ) : null}
@@ -102,7 +138,8 @@ export default async function Project({
                     </Link>
                   ) : (
                     <a className="button" href={p.link} target="_blank" rel="noreferrer">
-                      Visit project <ExternalLink size={16} />
+                      {p.link.includes("github.com") ? "View on GitHub" : "Visit repository"}{" "}
+                      <ExternalLink size={16} />
                     </a>
                   )
                 )}
@@ -111,8 +148,11 @@ export default async function Project({
                     Visit live website <ExternalLink size={16} />
                   </a>
                 )}
+                <a className="button outline" href={whatsappUrl} target="_blank" rel="noreferrer">
+                  Discuss Similar Work <ArrowUpRight size={15} />
+                </a>
                 <CopyBadge
-                  text={`https://erohtech.vercel.app/projects/${p.slug}`}
+                  text={`https://erohweb.vercel.app/projects/${p.slug}`}
                   label="project link"
                   className="share-project-btn"
                 />
@@ -126,29 +166,52 @@ export default async function Project({
               <b>{p.status}</b>
               <small>Focus areas</small>
               <b>{p.tags.join(", ")}</b>
+
+              {p.technologies?.length ? (
+                <>
+                  <small>Core Technologies</small>
+                  <div className="aside-tech-chips">
+                    {p.technologies.map((t) => (
+                      <span className="mini-chip" key={t}>
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </>
+              ) : null}
+
               {p.note && (
                 <>
-                  <small>Important note</small>
+                  <small>Notice</small>
                   <b className="notice-highlight">{p.note}</b>
                 </>
               )}
             </aside>
           </div>
 
+          {/* Project Pagination (Next / Previous Navigation) */}
           <div className="project-pagination">
             {prevProject ? (
               <Link href={`/projects/${prevProject.slug}`} className="pagination-card prev">
-                <small><ArrowLeft size={14} /> PREVIOUS PROJECT</small>
+                <small>
+                  <ArrowLeft size={14} /> PREVIOUS PROJECT
+                </small>
                 <b>{prevProject.title}</b>
               </Link>
-            ) : <div />}
+            ) : (
+              <div />
+            )}
 
             {nextProject ? (
               <Link href={`/projects/${nextProject.slug}`} className="pagination-card next">
-                <small>NEXT PROJECT <ArrowRight size={14} /></small>
+                <small>
+                  NEXT PROJECT <ArrowRight size={14} />
+                </small>
                 <b>{nextProject.title}</b>
               </Link>
-            ) : <div />}
+            ) : (
+              <div />
+            )}
           </div>
 
           <div className="center">

@@ -3082,3 +3082,512 @@ p:last-child {
     flex-wrap: wrap;
   }
 }
+
+
+/* ==========================================================================
+   ENHANCED SYSTEM DESIGN: PRODUCTS, PROCESS, IMPACT, FAQ & FORMS
+   ========================================================================== */
+
+/* 1. Hero Impact Metrics Strip */
+.hero-impact-bar {
+  margin-top: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.impact-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 24px 28px;
+  border-radius: var(--radius-xl);
+  background: rgba(11, 15, 25, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+.impact-metric-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.impact-metric-box .metric-num {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 850;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #FFFFFF 60%, rgba(225, 29, 72, 0.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.impact-metric-box .metric-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #F1F5F9;
+  letter-spacing: 0.01em;
+}
+
+.impact-metric-box .metric-desc {
+  font-size: 11.5px;
+  color: #94A3B8;
+  line-height: 1.4;
+}
+
+/* 2. Product Showcase Grid & Cards */
+.product-showcase-grid {
+  display: grid;
+  gap: 48px;
+  margin-top: 36px;
+}
+
+.product-feature-card {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 40px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--red-border);
+  box-shadow: var(--shadow-hover);
+}
+
+.product-card-media {
+  position: relative;
+  min-height: 380px;
+  background: var(--color-dark);
+  overflow: hidden;
+}
+
+.product-card-media .product-img {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-feature-card:hover .product-card-media .product-img {
+  transform: scale(1.03);
+}
+
+.product-card-badge-row {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.product-status-pill {
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-red);
+  color: #FFFFFF;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  box-shadow: 0 0 12px -2px rgba(225, 29, 72, 0.6);
+}
+
+.product-kind-tag {
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(11, 15, 25, 0.85);
+  backdrop-filter: blur(8px);
+  color: #CBD5E1;
+  font-size: 10.5px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.product-card-content {
+  padding: 36px 40px 36px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-label {
+  font-size: 11.5px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+
+.product-card-content h2 {
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  margin: 6px 0 10px;
+  color: var(--color-dark);
+}
+
+.product-desc {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+}
+
+.product-features-box {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+}
+
+.product-features-box h4 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  margin: 0 0 12px;
+}
+
+.product-features-box h4 svg {
+  color: var(--color-red);
+}
+
+.product-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.product-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--color-dark);
+}
+
+.feature-check-icon {
+  color: var(--color-red);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.product-tech-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tech-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+
+.tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px;
+  border-radius: var(--radius-full);
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  font-size: 11.5px;
+  font-weight: 650;
+  color: var(--color-slate);
+  transition: all 0.18s ease;
+}
+
+.tech-chip:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+  background: rgba(225, 29, 72, 0.05);
+}
+
+.product-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+/* 3. 4-Step Engineering Process Timeline */
+.process-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 44px;
+}
+
+.process-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.process-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--red-border);
+  box-shadow: var(--shadow-hover);
+}
+
+.process-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.process-step-num {
+  font-size: 26px;
+  font-weight: 850;
+  color: rgba(51, 65, 85, 0.3);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.process-card:hover .process-step-num {
+  color: var(--color-red);
+}
+
+.process-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: rgba(225, 29, 72, 0.08);
+  border: 1px solid rgba(225, 29, 72, 0.22);
+  color: var(--color-red);
+}
+
+.process-card h3 {
+  font-size: 17px;
+  margin: 0 0 4px;
+  color: var(--color-dark);
+}
+
+.process-tagline {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-red);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.process-card p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 18px;
+  flex-grow: 1;
+}
+
+.process-deliverables {
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.process-deliverables strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-slate);
+  margin-bottom: 8px;
+}
+
+.process-deliverables ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.process-deliverables li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--color-dark);
+}
+
+.deliverable-check {
+  color: var(--color-red);
+  flex-shrink: 0;
+}
+
+/* 4. Tech Chips on Project Detail & Sidebar */
+.aside-tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+.mini-chip {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-slate);
+}
+
+/* 5. Contact Form Interactive Pills */
+.form-group-pills {
+  margin-bottom: 18px;
+}
+
+.pills-label {
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: var(--color-slate) !important;
+  margin-bottom: 8px !important;
+}
+
+.pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.scope-pill {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--color-slate);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.scope-pill:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+.scope-pill.selected {
+  background: rgba(225, 29, 72, 0.12);
+  border-color: var(--color-red);
+  color: var(--color-red);
+  font-weight: 700;
+  box-shadow: 0 0 10px -2px rgba(225, 29, 72, 0.3);
+}
+
+.form-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* 6. FAQ Filters and Categories */
+.faq-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.faq-search-bar {
+  width: 100%;
+}
+
+.faq-results-info {
+  margin-bottom: 16px;
+  color: var(--muted);
+}
+
+.faq-q-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  text-align: left;
+}
+
+.faq-cat-badge {
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-red);
+  background: rgba(225, 29, 72, 0.08);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .process-timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .impact-metrics-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-feature-card {
+    grid-template-columns: 1fr;
+  }
+  .product-card-content {
+    padding: 24px;
+  }
+  .product-card-media {
+    min-height: 240px;
+  }
+  .process-timeline-grid {
+    grid-template-columns: 1fr;
+  }
+  .impact-metrics-strip {
+    grid-template-columns: 1fr 1fr;
+    padding: 18px 20px;
+  }
+}

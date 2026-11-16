@@ -4,6 +4,10 @@ import { useEffect, useState } from "react";
 import { MessageCircle, ArrowUp } from "lucide-react";
 import { site } from "@/data/content";
 
+const prefilledWhatsApp = `${site.whatsapp}?text=${encodeURIComponent(
+  "Hello EROH Technology, I would like to discuss a project."
+)}`;
+
 export function FloatingActions() {
   const [showTop, setShowTop] = useState(false);
 
@@ -33,7 +37,7 @@ export function FloatingActions() {
 
       {/* Direct WhatsApp Action Pill */}
       <a
-        href={site.whatsapp}
+        href={prefilledWhatsApp}
         target="_blank"
         rel="noreferrer"
         className="whatsapp-float-pill"

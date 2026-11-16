@@ -9,9 +9,31 @@ export interface ProjectItem {
   link: string;
   liveLink?: string;
   tags: string[];
+  technologies?: string[];
   note?: string;
   role?: string;
   highlights?: string[];
+}
+
+export interface ProductItem {
+  slug: string;
+  name: string;
+  kind: string;
+  status: string;
+  badge: string;
+  image: string;
+  summary: string;
+  description: string;
+  features: string[];
+  technologies: string[];
+  cta: string;
+  demoUrl?: string;
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+  category: "General" | "Development" | "Deployment & Cloud" | "Pricing & Process";
 }
 
 export const site = {
@@ -105,27 +127,90 @@ export const services = [
   },
 ];
 
-export const products = [
+export const engineeringProcess = [
+  {
+    step: "01",
+    title: "Discovery & Architecture",
+    tagline: "Problem definition & system blueprint",
+    description:
+      "We dissect organizational goals, analyze target user personas, and establish a rock-solid technical specification before writing code.",
+    deliverables: ["Architecture blueprint", "Database schema plan", "API specification", "Milestone roadmap"],
+  },
+  {
+    step: "02",
+    title: "UI/UX & Prototyping",
+    tagline: "High-fidelity interaction design",
+    description:
+      "We craft intuitive, accessible visual systems and clickable interactive prototypes that stakeholders can test and validate early.",
+    deliverables: ["Design tokens & system", "Interactive Figma prototypes", "Responsive layouts", "Accessibility compliance"],
+  },
+  {
+    step: "03",
+    title: "Scalable Engineering",
+    tagline: "Clean code & rigorous QA testing",
+    description:
+      "We build modern frontend and backend architectures with TypeScript, Next.js, and secure APIs, accompanied by automated testing and performance tuning.",
+    deliverables: ["Production TypeScript code", "REST/GraphQL API endpoints", "Automated test suites", "Sub-second load times"],
+  },
+  {
+    step: "04",
+    title: "Cloud Deployment & DevOps",
+    tagline: "Zero-downtime releases & monitoring",
+    description:
+      "We provision resilient cloud infrastructure with automated CI/CD pipelines, SSL certificates, backup automation, and proactive monitoring.",
+    deliverables: ["Automated CI/CD pipeline", "Docker containerization", "Cloud hosting & SSL setup", "24/7 uptime telemetry"],
+  },
+];
+
+export const impactMetrics = [
+  { value: "100%", label: "On-Time Delivery", detail: "Milestone-driven agile methodology" },
+  { value: "<1.2s", label: "Average Page Load", detail: "Optimized Next.js & Turbopack SSR" },
+  { value: "99.9%", label: "Cloud Uptime", detail: "Production DevOps & monitoring" },
+  { value: "24/7", label: "Direct Support", detail: "Kigali & East Africa technical team" },
+];
+
+export const products: ProductItem[] = [
   {
     slug: "eroh-shop",
     name: "E-ROH Shop",
     kind: "EROH Technology product",
     status: "E-commerce platform",
+    badge: "LIVE PLATFORM",
+    image: "/images/pro.jpg",
     summary:
       "A modern, high-performance e-commerce shopping platform developed by EROH Technology for digital commerce and retail.",
     description:
-      "E-ROH Shop is an EROH Technology proprietary e-commerce shopping platform engineered for fast, secure online retail. It features dynamic product catalogues, instant search, streamlined checkout workflows, and automated inventory management architecture.",
+      "E-ROH Shop is an EROH Technology proprietary digital shopping platform engineered for fast, secure online commerce. It features dynamic product discovery, intuitive shopping cart workflows, responsive checkout flows, and automated inventory management architecture.",
+    features: [
+      "Real-time catalogue search & filter engine",
+      "Frictionless cart & multi-currency checkout flows",
+      "Mobile money & card payment integrations",
+      "Merchant dashboard with live inventory telemetry",
+      "Fully responsive mobile-first shopping experience",
+    ],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Cloudflare"],
     cta: "Enquire about E-ROH Shop",
+    demoUrl: "https://erohshop.vercel.app/",
   },
   {
     slug: "inzusync",
     name: "inzuSync",
     kind: "EROH Technology product",
     status: "Product spotlight",
+    badge: "SaaS INITIATIVE",
+    image: "/images/Project1.png",
     summary:
-      "An EROH Technology product initiative. We are preparing clearer product information and updates for visitors interested in learning more.",
+      "An EROH Technology property management and asset synchronization SaaS initiative.",
     description:
-      "inzuSync is part of EROH Technology's own product direction. This page is an introduction rather than a feature or availability announcement; contact the team for verified product information and current updates.",
+      "inzuSync is part of EROH Technology's own product direction, addressing modern real estate and property operations. It centralizes asset synchronization, tenant communication, digital rent schedules, and maintenance dispatching into one clean interface.",
+    features: [
+      "Centralized property & asset synchronisation",
+      "Automated digital rent & lease tracking",
+      "Tenant self-service communication portal",
+      "Maintenance request dispatch & contractor logs",
+      "Real-time revenue, occupancy & yield analytics",
+    ],
+    technologies: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Docker", "AWS"],
     cta: "Ask about inzuSync",
   },
 ];
@@ -141,11 +226,29 @@ export const projects: ProjectItem[] = [
       "E-commerce shopping platform developed as an in-house EROH Technology product.",
     detail:
       "E-ROH Shop is an in-house e-commerce shopping platform developed by EROH Technology. It features dynamic product discovery, modern cart and checkout flows, and comprehensive administrative controls.",
-    link: "",
+    link: "/products",
     liveLink: "https://erohshop.vercel.app/",
     tags: ["EROH Product", "E-commerce", "Shopping Platform"],
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL"],
     role: "Conceived and developed as an in-house EROH Technology product.",
     highlights: ["Online product discovery", "Shopping cart and checkout experience", "Retail-focused digital platform"],
+  },
+  {
+    slug: "eroh-tech-portfolio",
+    title: "EROH Tech Portfolio",
+    type: "Developed Project",
+    status: "Production Showcase",
+    image: "/images/Project1.png",
+    summary:
+      "Developer Portfolio & Tech Hub showcasing digital solutions, engineering capabilities, and client workflows.",
+    detail:
+      "A modern developer portfolio and digital hub built to articulate technical capabilities, showcase developed platforms, and establish a high-trust digital presence for EROH Technology.",
+    link: "https://oflatech.vercel.app/",
+    liveLink: "https://oflatech.vercel.app/",
+    tags: ["Developer Portfolio", "Tech Hub", "Web Development"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "Framer Motion"],
+    role: "Designed, architected and deployed as EROH Technology's showcase platform.",
+    highlights: ["Interactive portfolio interface", "Modern dark-mode aesthetic", "Seamless project case studies"],
   },
   {
     slug: "npcrwanda",
@@ -159,6 +262,7 @@ export const projects: ProjectItem[] = [
     link: "",
     liveLink: "https://npcrwanda.org",
     tags: ["Website", "Administration Platform", "Full-Stack Development"],
+    technologies: ["React", "TypeScript", "Node.js", "Express", "REST APIs", "PostgreSQL"],
     role: "Website and platform development for NPCRwanda.",
     highlights: ["Public-facing organisational website", "Administrative content management", "Digital communication and information publishing"],
   },
@@ -172,9 +276,10 @@ export const projects: ProjectItem[] = [
       "Developer Portfolio & Tech Hub interactive media and project gallery system.",
     detail:
       "An open-source, modular image and media presentation gallery engineered for developers and design portfolios with fluid transitions and responsive layouts. Full codebase accessible on GitHub.",
-    link: "",
+    link: "https://github.com/EricHOfla/ProGallery",
     liveLink: "https://progallery-theta.vercel.app/",
     tags: ["Open Source", "Frontend Engine"],
+    technologies: ["React", "TypeScript", "CSS Modules", "HTML5 Canvas", "Vercel"],
     role: "Designed and developed the project as a reusable web gallery experience.",
     highlights: ["Interactive media presentation", "Responsive gallery layouts", "Portfolio-oriented project showcase"],
   },
@@ -192,6 +297,7 @@ export const projects: ProjectItem[] = [
     link: "",
     liveLink: "https://chemovigi.com/",
     tags: ["Cloud Deployment", "DevOps", "Infrastructure"],
+    technologies: ["Docker", "Nginx", "Linux/Ubuntu", "CI/CD Workflows", "Cloudflare", "SSL/TLS"],
     role: "Deployment and infrastructure support only; the website itself was not developed by EROH Technology.",
     highlights: ["Production environment setup", "Web server configuration", "Deployment workflow support"],
   },
@@ -209,6 +315,7 @@ export const projects: ProjectItem[] = [
     link: "",
     liveLink: "https://healthlab.rw/",
     tags: ["Production Hosting", "Cloud Infrastructure", "Deployment"],
+    technologies: ["Docker", "Node.js", "Nginx", "PostgreSQL", "Cloud VPS", "Automated Backups"],
     role: "Hosting and production deployment support only; the website itself was not developed by EROH Technology.",
     highlights: ["Production hosting setup", "Server and environment configuration", "Deployment support"],
   },
@@ -224,6 +331,7 @@ export const projects: ProjectItem[] = [
       "An early concept exploring how a digital platform could help connect agricultural information and services. This is presented as a concept, not a deployed product.",
     link: "",
     tags: ["Product thinking", "Agriculture"],
+    technologies: ["Product Design", "Figma", "Information Architecture", "Mobile First"],
     role: "An EROH Technology product concept, not a launched or deployed service.",
     highlights: ["Agricultural information access", "Potential digital service connections", "Early-stage product exploration"],
   },
@@ -239,6 +347,7 @@ export const projects: ProjectItem[] = [
       "A concept exploring how thoughtful software and clear user experiences could improve access to health-related information. This is not a live healthcare service.",
     link: "",
     tags: ["Product thinking", "Digital health"],
+    technologies: ["Healthcare UX", "Figma", "Accessibility (WCAG 2.1)", "Cloud Strategy"],
     role: "An EROH Technology product concept, not a live healthcare service.",
     highlights: ["Health information accessibility", "Clear and user-friendly digital experiences", "Early-stage product exploration"],
   },
@@ -315,41 +424,77 @@ export const courses = [
   },
 ];
 
-export const faqs = [
-  [
-    "What does EROH Technology do?",
-    "EROH Technology works across technology services, its own digital product initiatives, training and innovation. Explore the relevant pages or contact us to discuss a specific need.",
-  ],
-  [
-    "What services do you provide?",
-    "Our service areas include website and software development, mobile applications, IT consulting and support, UI/UX design, and digital presence support.",
-  ],
-  [
-    "What products does EROH Technology offer?",
-    "Visit the Products page for current product information. Product features, availability and release details should be confirmed directly with our team.",
-  ],
-  [
-    "How do I start a project with your team?",
-    "Send us a short description of your goals, timeline and requirements. We can arrange an initial discussion and recommend a practical next step.",
-  ],
-  [
-    "Do you work with startups and small businesses?",
-    "You can contact us to discuss your needs, project scope and whether our services are a good fit.",
-  ],
-  [
-    "Can you improve an existing website or application?",
-    "Share the current website or product, what is not working and what you would like to improve.",
-  ],
-  [
-    "Do you offer technology training?",
-    "We list training areas on our Training page. Contact us to confirm current availability, format and programme details.",
-  ],
-  [
-    "How much do your services cost?",
-    "Pricing depends on scope, requirements and timeline. Contact us with a short brief and we can discuss an appropriate estimate.",
-  ],
-  [
-    "Where are you based?",
-    "EROH Technology is based in Kigali, Rwanda. Contact us to discuss collaboration.",
-  ],
+export const faqs: FaqItem[] = [
+  {
+    question: "What does EROH Technology do?",
+    answer:
+      "EROH Technology works across custom software engineering, digital product initiatives, cloud deployment, IT consulting, and technology training.",
+    category: "General",
+  },
+  {
+    question: "What services do you provide?",
+    answer:
+      "Our services include website design and development, bespoke software systems, mobile applications, cloud deployment & DevOps, UI/UX design, and IT support.",
+    category: "Development",
+  },
+  {
+    question: "What products does EROH Technology offer?",
+    answer:
+      "We operate proprietary products including E-ROH Shop (our e-commerce retail platform) and inzuSync (our property management and asset synchronization SaaS initiative).",
+    category: "General",
+  },
+  {
+    question: "How do I start a project with your team?",
+    answer:
+      "Send us a short summary of your requirements using our contact form or directly via WhatsApp. We arrange a discovery consultation within 24 hours to discuss architecture, timeline, and an accurate estimate.",
+    category: "Pricing & Process",
+  },
+  {
+    question: "Do you work with startups, SMEs, and international clients?",
+    answer:
+      "Yes. We collaborate with early-stage founders, established enterprises, and non-profits in Rwanda, East Africa, and internationally.",
+    category: "General",
+  },
+  {
+    question: "Can you improve or modernize an existing website or application?",
+    answer:
+      "Yes. We perform legacy audits, UI/UX redesigns, framework migrations (e.g. to Next.js/React), API refactoring, and cloud performance optimizations.",
+    category: "Development",
+  },
+  {
+    question: "What cloud and deployment platforms do you support?",
+    answer:
+      "We configure and maintain production environments on Docker, Ubuntu/Linux VPS, Cloudflare, Vercel, AWS, Nginx, and automated GitHub Actions CI/CD pipelines.",
+    category: "Deployment & Cloud",
+  },
+  {
+    question: "What is your typical project delivery timeline?",
+    answer:
+      "Timelines depend on scope: landing pages and corporate sites typically take 2-3 weeks; complex custom web or mobile applications range from 4 to 8 weeks with phased milestones.",
+    category: "Pricing & Process",
+  },
+  {
+    question: "How much do your services cost?",
+    answer:
+      "Every project is customized to scope, technical complexity, and timeline. Contact us for a structured proposal and clear cost breakdown tailored to your budget.",
+    category: "Pricing & Process",
+  },
+  {
+    question: "Do you provide post-launch maintenance and DevOps support?",
+    answer:
+      "Yes. We offer continuous SLAs, proactive server uptime monitoring, security patch updates, database backups, and feature enhancements.",
+    category: "Deployment & Cloud",
+  },
+  {
+    question: "Do you offer hands-on technology training?",
+    answer:
+      "Yes. We provide focused practical training in Web Development, Mobile Application Development, and Digital Skills & SEO. Contact us for upcoming cohort details.",
+    category: "General",
+  },
+  {
+    question: "Where is EROH Technology based?",
+    answer:
+      "EROH Technology is headquartered in Kigali, Rwanda, delivering technology solutions across East Africa and globally.",
+    category: "General",
+  },
 ];

@@ -13,7 +13,7 @@ import {
   Sparkles,
   Boxes,
 } from "lucide-react";
-import { services, projects } from "@/data/content";
+import { services, projects, impactMetrics } from "@/data/content";
 import { TechStack } from "@/components/tech-stack";
 
 const icons = [MonitorSmartphone, Code2, Smartphone, Settings2, Palette, TrendingUp];
@@ -76,6 +76,19 @@ export default function Home() {
           <span>PRODUCTS</span>
           <span>TRAINING</span>
           <span>INNOVATION</span>
+        </div>
+
+        {/* Enterprise Impact Metrics Strip */}
+        <div className="container hero-impact-bar">
+          <div className="impact-metrics-strip">
+            {impactMetrics.map((m) => (
+              <div className="impact-metric-box" key={m.label}>
+                <span className="metric-num">{m.value}</span>
+                <b className="metric-title">{m.label}</b>
+                <small className="metric-desc">{m.detail}</small>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
