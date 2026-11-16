@@ -17,18 +17,24 @@ interface SubnavProps {
 
 export function Subnav({ items, label, className = "" }: SubnavProps) {
   const path = usePathname();
+  const normalizedPath = path.endsWith("/") && path.length > 1 ? path.slice(0, -1) : path;
 
   return (
     <nav className={`subnavbar-container ${className}`} aria-label={label || "Sub-navigation"}>
-      <div className="container subnavbar-wrap">
-        <div className="subnavbar-dock">
+      <div className="subnavbar-wrap">
+        <div className="subnavbar-dock" role="navigation">
           {items.map((item) => {
-            const isActive = item.href === "/" ? path === "/" : path === item.href;
+            const isActive =
+              item.href === "/"
+                ? normalizedPath === "/"
+                : normalizedPath === item.href || normalizedPath.startsWith(item.href + "/");
+
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 className={`subnav-pill ${isActive ? "active" : ""}`}
+                aria-current={isActive ? "page" : undefined}
               >
                 {isActive && <span className="subnav-active-dot" aria-hidden="true" />}
                 <span>{item.label}</span>

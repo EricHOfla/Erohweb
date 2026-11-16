@@ -2678,48 +2678,72 @@ p:last-child {
   transition: width 0.08s linear;
 }
 
-/* In-Page Natural Subnavbar (Unified Obsidian Noir & Crimson System) */
+/* Floating Island Subnavbar Dock (Identical in Design to Primary Navbar) */
 .subnavbar-container {
+  pointer-events: auto !important;
   position: relative;
-  z-index: 10;
-  padding: 28px 0 8px;
+  z-index: 95;
   display: flex;
   justify-content: center;
-  margin-top: 0;
-  margin-bottom: 8px;
+  margin-top: 8px;
+  padding: 0 16px;
+  animation: subnavAppear 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes subnavAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .subnavbar-wrap {
   display: flex;
   justify-content: center;
+  pointer-events: auto !important;
 }
 
 .subnavbar-dock {
+  pointer-events: auto !important;
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 5px 6px;
+  padding: 4px 6px;
   border-radius: var(--radius-full);
   background: rgba(11, 15, 25, 0.88);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.header.scrolled .subnavbar-dock {
+  background: rgba(11, 15, 25, 0.94);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
 .subnav-pill {
+  pointer-events: auto !important;
+  cursor: pointer !important;
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 7px 18px;
+  padding: 6px 16px;
   border-radius: var(--radius-full);
   font-size: 13px;
   font-weight: 600;
   color: #94A3B8;
+  border: 1px solid transparent;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
+  text-decoration: none;
+  user-select: none;
 }
 
 .subnav-pill:hover {
@@ -2737,21 +2761,27 @@ p:last-child {
 
 .subnav-active-dot {
   display: inline-block;
-  width: 5.5px;
-  height: 5.5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--color-red);
   box-shadow: 0 0 8px var(--color-red);
+  flex-shrink: 0;
 }
 
 .subnav-badge {
   display: inline-block;
-  padding: 1px 6px;
+  padding: 1px 7px;
   border-radius: var(--radius-full);
   font-size: 10px;
   font-weight: 700;
   background: rgba(255, 255, 255, 0.12);
   color: #FFFFFF;
+}
+
+/* Page Hero Clearance when Subnavbar is present */
+.header.has-subnav + #main-content .page-hero {
+  padding-top: 156px;
 }
 
 /* Mobile Nav Dividers */
@@ -2899,18 +2929,28 @@ p:last-child {
 }
 
 @media (max-width: 768px) {
+  .header.has-subnav + #main-content .page-hero {
+    padding-top: 126px;
+  }
   .subnavbar-container {
-    padding: 20px 16px 8px;
-    margin-bottom: 0;
+    padding: 0 12px;
+    margin-top: 6px;
   }
   .subnavbar-dock {
-    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 3px 4px;
+    gap: 3px;
     justify-content: flex-start;
   }
   .subnavbar-dock::-webkit-scrollbar {
     display: none;
+  }
+  .subnav-pill {
+    padding: 5px 12px;
+    font-size: 12px;
   }
   .project-pagination {
     grid-template-columns: 1fr;

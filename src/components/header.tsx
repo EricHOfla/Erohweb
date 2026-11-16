@@ -49,7 +49,7 @@ export function Header() {
         aria-hidden="true"
       />
 
-      <header className={`header ${scrolled ? "scrolled" : ""}`}>
+      <header className={`header ${scrolled ? "scrolled" : ""} ${isCompanySection ? "has-subnav" : ""}`}>
         <div className="container nav-wrap">
           <Link href="/" className="brand" onClick={() => setOpen(false)}>
             <span className="brand-mark">E</span>
@@ -99,7 +99,10 @@ export function Header() {
           </div>
         </div>
 
-        {isCompanySection && <Subnav items={companySubnavItems} label="Company sections" className="company-subnav" />}
+        {/* Unified Subnavbar Dock (Company & Learning sections) */}
+        {!open && isCompanySection && (
+          <Subnav items={companySubnavItems} label="Company sections" />
+        )}
 
         {/* Mobile Drawer (Organized Pillars + Subnav Groups) */}
         <div className={`mobile-nav-panel ${open ? "open" : ""}`} aria-hidden={!open}>
