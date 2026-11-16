@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Subnav, companySubnavItems } from "@/components/subnav";
 
 const primaryNav = [
   { label: "Home", href: "/" },
@@ -25,6 +26,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
+  const isCompanySection = ["/about", "/team", "/training", "/faq"].some((route) => path.startsWith(route));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -96,6 +98,8 @@ export function Header() {
             </button>
           </div>
         </div>
+
+        {isCompanySection && <Subnav items={companySubnavItems} label="Company sections" className="company-subnav" />}
 
         {/* Mobile Drawer (Organized Pillars + Subnav Groups) */}
         <div className={`mobile-nav-panel ${open ? "open" : ""}`} aria-hidden={!open}>
