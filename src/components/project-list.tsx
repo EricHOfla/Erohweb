@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { ArrowUpRight, Search } from "lucide-react";
+import { ArrowUpRight, Search, Code2 } from "lucide-react";
 import { projects } from "@/data/content";
 
 export function ProjectList() {
@@ -72,7 +72,7 @@ export function ProjectList() {
           {rows.map((p) => (
             <article className="project-card" key={p.slug}>
               <Link className="project-image project-placeholder" href={`/projects/${p.slug}`} aria-label={`View ${p.title} project`}>
-                <span className="project-code-mark" aria-hidden="true">{"</>"}</span>
+                <Code2 className="project-code-icon" aria-hidden="true" size={68} strokeWidth={2.1} />
                 <span className="project-status-pill">{p.status}</span>
               </Link>
               <div className="project-body">
