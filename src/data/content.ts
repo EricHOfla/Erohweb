@@ -139,8 +139,8 @@ export const projects: ProjectItem[] = [
       "E-commerce shopping platform developed as an in-house EROH Technology product.",
     detail:
       "E-ROH Shop is an in-house e-commerce shopping platform developed by EROH Technology. It features dynamic product discovery, modern cart and checkout flows, and comprehensive administrative controls.",
-    link: "/products",
-    liveLink: "https://erohshop.vercel.app",
+    link: "",
+    liveLink: "https://erohshop.vercel.app/",
     tags: ["EROH Product", "E-commerce", "Shopping Platform"],
   },
   {
@@ -167,7 +167,8 @@ export const projects: ProjectItem[] = [
     detail:
       "An open-source, modular image and media presentation gallery engineered for developers and design portfolios with fluid transitions and responsive layouts. Full codebase accessible on GitHub.",
     link: "",
-    tags: ["GitHub Repository", "Open Source", "Frontend Engine"],
+    liveLink: "https://progallery-theta.vercel.app/",
+    tags: ["Open Source", "Frontend Engine"],
   },
   {
     slug: "chemovigi",
