@@ -2678,57 +2678,53 @@ p:last-child {
   transition: width 0.08s linear;
 }
 
-/* Subnavbar Container & Dock */
+/* In-Page Natural Subnavbar (Non-sticky Segmented Tab Switcher) */
 .subnavbar-container {
-  position: sticky;
-  top: 86px;
-  z-index: 40;
-  padding: 12px 0;
+  position: relative;
+  z-index: 10;
+  padding: 32px 0 12px;
   display: flex;
   justify-content: center;
-  pointer-events: none;
-  margin-top: -24px;
-  margin-bottom: 24px;
+  margin-top: 0;
+  margin-bottom: 8px;
 }
 
 .subnavbar-dock {
-  pointer-events: auto;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 5px 8px;
+  padding: 6px 8px;
   border-radius: var(--radius-full);
-  background: rgba(11, 15, 25, 0.90);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.35);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .subnav-pill {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 7px 16px;
+  padding: 8px 20px;
   border-radius: var(--radius-full);
-  font-size: 12.5px;
-  font-weight: 600;
-  color: #94A3B8;
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--ink-secondary);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
 
 .subnav-pill:hover {
-  color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-dark);
+  background: var(--surface-alt);
 }
 
 .subnav-pill.active {
   color: #FFFFFF;
-  background: rgba(225, 29, 72, 0.22);
-  border: 1px solid rgba(225, 29, 72, 0.5);
+  background: var(--color-dark);
+  border: 1px solid var(--color-dark);
   font-weight: 700;
-  box-shadow: 0 0 12px -2px rgba(225, 29, 72, 0.4);
+  box-shadow: 0 4px 14px -2px rgba(11, 15, 25, 0.3);
 }
 
 .subnav-badge {
@@ -2887,8 +2883,8 @@ p:last-child {
 
 @media (max-width: 768px) {
   .subnavbar-container {
-    top: 74px;
-    padding: 8px 12px;
+    padding: 20px 16px 8px;
+    margin-bottom: 0;
   }
   .subnavbar-dock {
     width: 100%;
