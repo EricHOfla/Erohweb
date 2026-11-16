@@ -20,20 +20,23 @@ export function Subnav({ items, label, className = "" }: SubnavProps) {
 
   return (
     <nav className={`subnavbar-container ${className}`} aria-label={label || "Sub-navigation"}>
-      <div className="subnavbar-dock">
-        {items.map((item) => {
-          const isActive = item.href === "/" ? path === "/" : path === item.href;
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`subnav-pill ${isActive ? "active" : ""}`}
-            >
-              <span>{item.label}</span>
-              {item.badge !== undefined && <span className="subnav-badge">{item.badge}</span>}
-            </Link>
-          );
-        })}
+      <div className="container subnavbar-wrap">
+        <div className="subnavbar-dock">
+          {items.map((item) => {
+            const isActive = item.href === "/" ? path === "/" : path === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`subnav-pill ${isActive ? "active" : ""}`}
+              >
+                {isActive && <span className="subnav-active-dot" aria-hidden="true" />}
+                <span>{item.label}</span>
+                {item.badge !== undefined && <span className="subnav-badge">{item.badge}</span>}
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </nav>
   );
