@@ -10,6 +10,8 @@ export interface ProjectItem {
   liveLink?: string;
   tags: string[];
   note?: string;
+  role?: string;
+  highlights?: string[];
 }
 
 export const site = {
@@ -142,6 +144,8 @@ export const projects: ProjectItem[] = [
     link: "",
     liveLink: "https://erohshop.vercel.app/",
     tags: ["EROH Product", "E-commerce", "Shopping Platform"],
+    role: "Conceived and developed as an in-house EROH Technology product.",
+    highlights: ["Online product discovery", "Shopping cart and checkout experience", "Retail-focused digital platform"],
   },
   {
     slug: "npcrwanda",
@@ -155,6 +159,8 @@ export const projects: ProjectItem[] = [
     link: "",
     liveLink: "https://npcrwanda.org",
     tags: ["Website", "Administration Platform", "Full-Stack Development"],
+    role: "Website and platform development for NPCRwanda.",
+    highlights: ["Public-facing organisational website", "Administrative content management", "Digital communication and information publishing"],
   },
   {
     slug: "progallery",
@@ -169,6 +175,8 @@ export const projects: ProjectItem[] = [
     link: "",
     liveLink: "https://progallery-theta.vercel.app/",
     tags: ["Open Source", "Frontend Engine"],
+    role: "Designed and developed the project as a reusable web gallery experience.",
+    highlights: ["Interactive media presentation", "Responsive gallery layouts", "Portfolio-oriented project showcase"],
   },
   {
     slug: "chemovigi",
@@ -184,6 +192,8 @@ export const projects: ProjectItem[] = [
     link: "",
     liveLink: "https://chemovigi.com/",
     tags: ["Cloud Deployment", "DevOps", "Infrastructure"],
+    role: "Deployment and infrastructure support only; the website itself was not developed by EROH Technology.",
+    highlights: ["Production environment setup", "Web server configuration", "Deployment workflow support"],
   },
   {
     slug: "health-lab",
@@ -199,6 +209,8 @@ export const projects: ProjectItem[] = [
     link: "",
     liveLink: "https://healthlab.rw/",
     tags: ["Production Hosting", "Cloud Infrastructure", "Deployment"],
+    role: "Hosting and production deployment support only; the website itself was not developed by EROH Technology.",
+    highlights: ["Production hosting setup", "Server and environment configuration", "Deployment support"],
   },
   {
     slug: "agrotech-concept",
@@ -212,6 +224,8 @@ export const projects: ProjectItem[] = [
       "An early concept exploring how a digital platform could help connect agricultural information and services. This is presented as a concept, not a deployed product.",
     link: "",
     tags: ["Product thinking", "Agriculture"],
+    role: "An EROH Technology product concept, not a launched or deployed service.",
+    highlights: ["Agricultural information access", "Potential digital service connections", "Early-stage product exploration"],
   },
   {
     slug: "techhealth-concept",
@@ -225,6 +239,8 @@ export const projects: ProjectItem[] = [
       "A concept exploring how thoughtful software and clear user experiences could improve access to health-related information. This is not a live healthcare service.",
     link: "",
     tags: ["Product thinking", "Digital health"],
+    role: "An EROH Technology product concept, not a live healthcare service.",
+    highlights: ["Health information accessibility", "Clear and user-friendly digital experiences", "Early-stage product exploration"],
   },
 ];
 
