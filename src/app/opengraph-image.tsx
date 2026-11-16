@@ -29,9 +29,12 @@ export default function OgImage() {
             right: 0,
             width: "480px",
             height: "480px",
-            background: "radial-gradient(circle at 80% 20%, rgba(225,29,72,0.18) 0%, transparent 70%)",
+            background:
+              "radial-gradient(circle at 80% 20%, rgba(225,29,72,0.18) 0%, transparent 70%)",
+            display: "flex",
           }}
         />
+
         {/* Top: Brand */}
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
           <div
@@ -50,16 +53,39 @@ export default function OgImage() {
           >
             E
           </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <span style={{ color: "#fff", fontSize: "22px", fontWeight: "700", letterSpacing: "-0.02em" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "2px",
+            }}
+          >
+            <span
+              style={{
+                color: "#fff",
+                fontSize: "22px",
+                fontWeight: "700",
+                letterSpacing: "-0.02em",
+              }}
+            >
               EROH TECHNOLOGY
             </span>
-            <span style={{ color: "#64748B", fontSize: "13px", letterSpacing: "0.08em" }}>KIGALI, RWANDA</span>
+            <span
+              style={{
+                color: "#64748B",
+                fontSize: "13px",
+                letterSpacing: "0.08em",
+              }}
+            >
+              KIGALI, RWANDA
+            </span>
           </div>
         </div>
 
         {/* Middle: Headline */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+        <div
+          style={{ display: "flex", flexDirection: "column", gap: "24px" }}
+        >
           <div
             style={{
               display: "flex",
@@ -71,33 +97,59 @@ export default function OgImage() {
               letterSpacing: "0.12em",
             }}
           >
-            <div style={{ width: "28px", height: "2px", background: "#E11D48" }} />
-            DIGITAL SOLUTIONS
+            <div
+              style={{
+                width: "28px",
+                height: "2px",
+                background: "#E11D48",
+                display: "flex",
+              }}
+            />
+            <span>DIGITAL SOLUTIONS</span>
           </div>
+
           <div
             style={{
+              display: "flex",
+              flexWrap: "wrap",
               fontSize: "64px",
               fontWeight: "900",
-              color: "#fff",
               lineHeight: "1.05",
               letterSpacing: "-0.03em",
               maxWidth: "760px",
             }}
           >
-            Good ideas deserve{" "}
+            <span style={{ color: "#fff" }}>Good ideas deserve&nbsp;</span>
             <span style={{ color: "#E11D48" }}>great technology.</span>
           </div>
-          <div style={{ color: "#94A3B8", fontSize: "20px", maxWidth: "600px", lineHeight: "1.5" }}>
-            Technology services, digital products and learning experiences built around real needs.
+
+          <div
+            style={{
+              display: "flex",
+              color: "#94A3B8",
+              fontSize: "20px",
+              maxWidth: "600px",
+              lineHeight: "1.5",
+            }}
+          >
+            Technology services, digital products and learning experiences built
+            around real needs.
           </div>
         </div>
 
-        {/* Bottom: Tags */}
-        <div style={{ display: "flex", gap: "12px" }}>
+        {/* Bottom: Tags row */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+          }}
+        >
           {["SERVICES", "PRODUCTS", "TRAINING", "INNOVATION"].map((tag) => (
             <div
               key={tag}
               style={{
+                display: "flex",
                 padding: "8px 18px",
                 border: "1px solid rgba(255,255,255,0.12)",
                 borderRadius: "6px",
@@ -112,6 +164,7 @@ export default function OgImage() {
           ))}
           <div
             style={{
+              display: "flex",
               marginLeft: "auto",
               color: "#64748B",
               fontSize: "14px",
