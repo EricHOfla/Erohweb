@@ -10,7 +10,7 @@ export function Footer() {
           <Link href="/" className="brand brand-light">
             <span className="brand-mark">E</span>
             <span>
-              <b>EROH</b>
+              <b>EROH </b> 
               <small>TECHNOLOGY LTD</small>
             </span>
           </Link>
