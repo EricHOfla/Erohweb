@@ -7,6 +7,8 @@ export interface ProjectItem {
   summary: string;
   detail: string;
   link: string;
+  sourceLink?: string;
+  liveLink?: string;
   tags: string[];
   note?: string;
 }
@@ -129,19 +131,6 @@ export const products = [
 
 export const projects: ProjectItem[] = [
   {
-    slug: "eroh-tech-portfolio",
-    title: "EROH Tech Portfolio",
-    type: "Developed Project",
-    status: "Production Showcase",
-    image: "/images/Project1.png",
-    summary:
-      "Developer Portfolio & Tech Hub showcasing digital solutions, engineering capabilities, and client workflows.",
-    detail:
-      "A modern developer portfolio and digital hub built to articulate technical capabilities, showcase developed platforms, and establish a high-trust digital presence for EROH Technology.",
-    link: "https://oflatech.vercel.app/",
-    tags: ["Developer Portfolio", "Tech Hub", "Web Development"],
-  },
-  {
     slug: "eroh-shop",
     title: "E-ROH Shop",
     type: "EROH Product",
@@ -152,6 +141,7 @@ export const projects: ProjectItem[] = [
     detail:
       "E-ROH Shop is an in-house e-commerce shopping platform developed by EROH Technology. It features dynamic product discovery, modern cart and checkout flows, and comprehensive administrative controls.",
     link: "/products",
+    sourceLink: "https://github.com/EricHOfla/E-CommerceReact-JS-DummyJSON",
     tags: ["EROH Product", "E-commerce", "Shopping Platform"],
   },
   {
@@ -164,6 +154,8 @@ export const projects: ProjectItem[] = [
     detail:
       "A tailored digital platform engineered for NPCRwanda combining an accessible public website with a secure administrative control system for managing organizational communications, public notices, and content updates.",
     link: "",
+    sourceLink: "https://github.com/EricHOfla/NPCRwanda",
+    liveLink: "https://npcrwanda.org",
     tags: ["Website", "Administration Platform", "Full-Stack Development"],
   },
   {
@@ -176,7 +168,8 @@ export const projects: ProjectItem[] = [
       "Developer Portfolio & Tech Hub interactive media and project gallery system.",
     detail:
       "An open-source, modular image and media presentation gallery engineered for developers and design portfolios with fluid transitions and responsive layouts. Full codebase accessible on GitHub.",
-    link: "https://github.com/EricHOfla/ProGallery",
+    link: "",
+    sourceLink: "https://github.com/EricHOfla/ProGallery",
     tags: ["GitHub Repository", "Open Source", "Frontend Engine"],
   },
   {
@@ -218,6 +211,7 @@ export const projects: ProjectItem[] = [
     detail:
       "An early concept exploring how a digital platform could help connect agricultural information and services. This is presented as a concept, not a deployed product.",
     link: "",
+    sourceLink: "https://github.com/EricHOfla/agro-bussiness-project",
     tags: ["Product thinking", "Agriculture"],
   },
   {
