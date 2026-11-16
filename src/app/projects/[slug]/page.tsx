@@ -93,11 +93,6 @@ export default async function Project({
                     Visit live website <ExternalLink size={16} />
                   </a>
                 )}
-                {p.sourceLink && (
-                  <a className="button" href={p.sourceLink} target="_blank" rel="noreferrer">
-                    View source on GitHub <ExternalLink size={16} />
-                  </a>
-                )}
                 <CopyBadge
                   text={`https://erohweb.vercel.app/projects/${p.slug}`}
                   label="project link"
