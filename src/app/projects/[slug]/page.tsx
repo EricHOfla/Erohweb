@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ExternalLink, Clock, ShieldAlert, ArrowUpRight } from "lucide-react";
@@ -56,10 +55,6 @@ export default async function Project({
 
       <section className="section">
         <div className="container detail">
-          <div className="detail-img">
-            <Image src={p.image} alt={p.title} fill priority sizes="100vw" />
-          </div>
-
           <div className="detail-grid">
             <div>
               <span className="eyebrow">OVERVIEW</span>
