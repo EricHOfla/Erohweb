@@ -59,7 +59,7 @@ export function Footer() {
           <Link href="/projects">Projects</Link>
           <Link href="/team">Our team</Link>
           <Link href="/training">Training</Link>
-          <Link href="/faq">FAQs</Link>
+          <Link href="/faq">FAQs </Link>
         </div>
 
         <div className="footer-col">
