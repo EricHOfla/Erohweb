@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Linkedin, Mail } from "lucide-react";
-import { Subnav, companySubnavItems } from "@/components/subnav";
 import { team } from "@/data/content";
 
 export const metadata: Metadata = {
@@ -27,9 +26,6 @@ export default function Team() {
           </div>
         </div>
       </section>
-
-      {/* Contextual Subnavbar for Company Section */}
-      <Subnav items={companySubnavItems} label="Company Sections" />
 
       <section className="section">
         <div className="container">
