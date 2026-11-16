@@ -1412,7 +1412,7 @@ p:last-child {
 .project-code-icon {
   display: block;
   flex: 0 0 auto;
-  color: var(--color-blue);
+  color: var(--color-slate);
   opacity: 1;
   visibility: visible;
   transition: transform 0.25s ease, color 0.25s ease;
@@ -3074,7 +3074,7 @@ p:last-child {
 .project-highlight-list svg {
   flex: 0 0 auto;
   margin-top: 2px;
-  color: var(--color-blue);
+  color: var(--color-slate);
 }
 
 @media (max-width: 768px) {
