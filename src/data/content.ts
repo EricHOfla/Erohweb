@@ -7,7 +7,6 @@ export interface ProjectItem {
   summary: string;
   detail: string;
   link: string;
-  sourceLink?: string;
   liveLink?: string;
   tags: string[];
   note?: string;
@@ -141,7 +140,7 @@ export const projects: ProjectItem[] = [
     detail:
       "E-ROH Shop is an in-house e-commerce shopping platform developed by EROH Technology. It features dynamic product discovery, modern cart and checkout flows, and comprehensive administrative controls.",
     link: "/products",
-    sourceLink: "https://github.com/EricHOfla/E-CommerceReact-JS-DummyJSON",
+    liveLink: "https://erohshop.vercel.app",
     tags: ["EROH Product", "E-commerce", "Shopping Platform"],
   },
   {
@@ -154,7 +153,6 @@ export const projects: ProjectItem[] = [
     detail:
       "A tailored digital platform engineered for NPCRwanda combining an accessible public website with a secure administrative control system for managing organizational communications, public notices, and content updates.",
     link: "",
-    sourceLink: "https://github.com/EricHOfla/NPCRwanda",
     liveLink: "https://npcrwanda.org",
     tags: ["Website", "Administration Platform", "Full-Stack Development"],
   },
@@ -169,7 +167,6 @@ export const projects: ProjectItem[] = [
     detail:
       "An open-source, modular image and media presentation gallery engineered for developers and design portfolios with fluid transitions and responsive layouts. Full codebase accessible on GitHub.",
     link: "",
-    sourceLink: "https://github.com/EricHOfla/ProGallery",
     tags: ["GitHub Repository", "Open Source", "Frontend Engine"],
   },
   {
@@ -211,7 +208,6 @@ export const projects: ProjectItem[] = [
     detail:
       "An early concept exploring how a digital platform could help connect agricultural information and services. This is presented as a concept, not a deployed product.",
     link: "",
-    sourceLink: "https://github.com/EricHOfla/agro-bussiness-project",
     tags: ["Product thinking", "Agriculture"],
   },
   {
