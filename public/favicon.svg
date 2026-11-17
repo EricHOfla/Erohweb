@@ -1,1 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#0B0F19"/><path d="M43 15H19v34h25v-8H28v-5h14v-8H28v-5h15z" fill="#E11D48"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background subtle gradient matching Obsidian Noir palette -->
+    <radialGradient id="bgGrad" cx="50%" cy="42%" r="58%">
+      <stop offset="0%" stop-color="#161E2E" />
+      <stop offset="65%" stop-color="#0B0F19" />
+      <stop offset="100%" stop-color="#05080E" />
+    </radialGradient>
+
+    <!-- Outer precision glow ring with Signal Crimson -->
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E11D48" />
+      <stop offset="50%" stop-color="#BE123C" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+
+    <!-- Inner specular highlight on edge -->
+    <linearGradient id="innerStroke" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.18)" />
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.02)" />
+    </linearGradient>
+
+    <!-- Signal Crimson accent gradient for the letter 'E' -->
+    <linearGradient id="crimsonE" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="100%" stop-color="#E11D48" />
+    </linearGradient>
+
+    <!-- Drop shadow for crisp elevation -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Outer Ring (replaces yellow/gold with Obsidian & Signal Crimson gradient) -->
+  <circle cx="256" cy="256" r="248" fill="none" stroke="url(#ringGrad)" stroke-width="8" />
+
+  <!-- Main Circular Body (replaces royal blue with Obsidian Noir) -->
+  <circle cx="256" cy="256" r="242" fill="url(#bgGrad)" />
+
+  <!-- Inner Subtle Technical Rim -->
+  <circle cx="256" cy="256" r="236" fill="none" stroke="url(#innerStroke)" stroke-width="2" />
+
+  <!-- Main Logo Typography Group -->
+  <g filter="url(#shadow)" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+    <!-- Center EROH Text Row -->
+    <!-- 'E' in Signal Crimson -->
+    <text x="76" y="296" font-size="142" font-weight="900" fill="url(#crimsonE)" letter-spacing="-0.04em">E</text>
+    
+    <!-- 'ROH' in Pure White -->
+    <text x="170" y="296" font-size="142" font-weight="900" fill="#FFFFFF" letter-spacing="-0.04em">ROH</text>
+
+    <!-- Subtitle 'Technology' in Clean Slate White -->
+    <text x="78" y="354" font-size="44" font-weight="600" fill="#CBD5E1" letter-spacing="-0.02em">Technology</text>
+  </g>
+</svg>
