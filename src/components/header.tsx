@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
@@ -52,7 +53,16 @@ export function Header() {
       <header className={`header ${scrolled ? "scrolled" : ""} ${isCompanySection ? "has-subnav" : ""}`}>
         <div className="container nav-wrap">
           <Link href="/" className="brand" onClick={() => setOpen(false)}>
-            <span className="brand-mark">E</span>
+            <span className="brand-logo-wrap">
+              <Image
+                src="/logo.jpg"
+                alt="EROH Technology"
+                width={40}
+                height={40}
+                className="brand-logo-img"
+                priority
+              />
+            </span>
             <span className="brand-title">
               <b>EROH</b>
               <small>TECHNOLOGY</small>

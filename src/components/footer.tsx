@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, MapPin, Phone, ArrowUpRight, Github, Linkedin } from "lucide-react";
 import { site } from "@/data/content";
 
@@ -8,7 +9,15 @@ export function Footer() {
       <div className="container footer-grid">
         <div className="footer-brand-col">
           <Link href="/" className="brand brand-light">
-            <span className="brand-mark">E</span>
+            <span className="brand-logo-wrap">
+              <Image
+                src="/logo.jpg"
+                alt="EROH Technology Logo"
+                width={36}
+                height={36}
+                className="brand-logo-img"
+              />
+            </span>
             <span>
               <b>EROH </b>
               <small>TECHNOLOGY LTD</small>

@@ -21,7 +21,13 @@ export const metadata: Metadata = {
     locale: "en_RW",
     siteName: site.name,
   },
-  icons: { icon: "/favicon.svg" },
+  icons: {
+    icon: [
+      { url: "/logo.jpg" },
+      { url: "/favicon.svg", type: "image/svg+xml" }
+    ],
+    apple: "/logo.jpg"
+  },
   robots: {
     index: true,
     follow: true,
@@ -41,7 +47,7 @@ const jsonLd = {
   name: site.name,
   legalName: site.legal,
   url: "https://erohweb.vercel.app",
-  logo: "https://erohweb.vercel.app/favicon.svg",
+  logo: "https://erohweb.vercel.app/logo.jpg",
   description: site.description,
   email: site.email,
   telephone: site.phone,
