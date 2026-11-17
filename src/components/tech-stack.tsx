@@ -15,9 +15,18 @@ import {
   Boxes,
   Lock,
   Workflow,
+  Radio,
+  FileCode,
+  Binary,
+  HardDrive,
+  Network,
+  Activity,
+  CreditCard,
+  Bot,
 } from "lucide-react";
 
-const technologies = [
+// Track 1 Technologies (12 items)
+const track1 = [
   { name: "Next.js 16 & React", category: "Modern Frontend", icon: Layers },
   { name: "TypeScript", category: "Type-Safe Core", icon: Code },
   { name: "Node.js & Express", category: "Backend Runtime", icon: Terminal },
@@ -30,26 +39,37 @@ const technologies = [
   { name: "REST & GraphQL APIs", category: "System Integration", icon: Zap },
   { name: "CI/CD & GitHub Actions", category: "DevOps Automation", icon: GitBranch },
   { name: "UI/UX & Design Systems", category: "Figma Architecture", icon: Palette },
-  { name: "Web Security & Auth", category: "Enterprise Defense", icon: Lock },
-  { name: "Redis & Caching", category: "High Performance", icon: Boxes },
-  { name: "Microservices & Queues", category: "Scalable Systems", icon: Workflow },
-  { name: "DevOps & SRE Monitoring", category: "Uptime & Reliability", icon: ShieldCheck },
+];
+
+// Track 2 Technologies (12 items)
+const track2 = [
+  { name: "Web Security & OAuth", category: "Enterprise Defense", icon: Lock },
+  { name: "Redis & In-Memory Cache", category: "High Performance", icon: Boxes },
+  { name: "Microservices & Message Queues", category: "Scalable Systems", icon: Workflow },
+  { name: "DevOps & SRE Monitoring", category: "Uptime & Observability", icon: ShieldCheck },
+  { name: "Nginx & Reverse Proxies", category: "Server Infrastructure", icon: Network },
+  { name: "Tailwind CSS & Modern CSS", category: "Design Architecture", icon: FileCode },
+  { name: "WebSockets & Real-Time", category: "Live Event Streams", icon: Radio },
+  { name: "MongoDB & NoSQL", category: "Document Storage", icon: HardDrive },
+  { name: "Payment Gateways & MoMo", category: "Fintech Integrations", icon: CreditCard },
+  { name: "AI Automation & LLMs", category: "Intelligent Workflows", icon: Bot },
+  { name: "Performance & Core Web Vitals", category: "Speed Optimization", icon: Activity },
+  { name: "System Architecture", category: "Clean Code & Design", icon: Binary },
 ];
 
 export function TechStack() {
   return (
     <div className="tech-stack-wrap">
       <div className="tech-stack-head">
-        <span className="tech-label">CORE TECHNOLOGIES &amp; CAPABILITIES</span>
+        <span className="tech-label">CORE TECHNOLOGIES &amp; ARCHITECTURAL CAPABILITIES</span>
         <div className="tech-line" />
       </div>
 
       <div className="tech-slider-viewport">
         {/* Row 1: Leftward continuous scroll */}
         <div className="tech-marquee-track scroll-left">
-          {/* Double the list for seamless infinite loop */}
-          {[...technologies, ...technologies].map(({ name, category, icon: Icon }, idx) => (
-            <div key={`${name}-${idx}`} className="tech-pill">
+          {[...track1, ...track1].map(({ name, category, icon: Icon }, idx) => (
+            <div key={`t1-${name}-${idx}`} className="tech-pill">
               <Icon size={18} className="tech-icon" />
               <div className="tech-info">
                 <b>{name}</b>
@@ -59,19 +79,17 @@ export function TechStack() {
           ))}
         </div>
 
-        {/* Row 2: Rightward continuous scroll with reversed/alternate order for rich motion */}
+        {/* Row 2: Rightward continuous scroll */}
         <div className="tech-marquee-track scroll-right">
-          {[...technologies.slice().reverse(), ...technologies.slice().reverse()].map(
-            ({ name, category, icon: Icon }, idx) => (
-              <div key={`rev-${name}-${idx}`} className="tech-pill">
-                <Icon size={18} className="tech-icon" />
-                <div className="tech-info">
-                  <b>{name}</b>
-                  <small>{category}</small>
-                </div>
+          {[...track2, ...track2].map(({ name, category, icon: Icon }, idx) => (
+            <div key={`t2-${name}-${idx}`} className="tech-pill">
+              <Icon size={18} className="tech-icon" />
+              <div className="tech-info">
+                <b>{name}</b>
+                <small>{category}</small>
               </div>
-            )
-          )}
+            </div>
+          ))}
         </div>
       </div>
     </div>
