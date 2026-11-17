@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import {
   Code,
   Layers,
@@ -58,6 +61,57 @@ const track2 = [
 ];
 
 export function TechStack() {
+  const track1Ref = useRef<HTMLDivElement>(null);
+  const track2Ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let animId: number;
+    let pos1 = 0;
+    let pos2 = 0;
+    let isHovered = false;
+
+    const t1 = track1Ref.current;
+    const t2 = track2Ref.current;
+
+    const onEnter = () => { isHovered = true; };
+    const onLeave = () => { isHovered = false; };
+
+    const parent = t1?.parentElement;
+    parent?.addEventListener("mouseenter", onEnter);
+    parent?.addEventListener("mouseleave", onLeave);
+
+    const speed = 1.0; // pixels per frame
+
+    const loop = () => {
+      if (!isHovered && t1 && t2) {
+        // Track 1 scrolls Left
+        pos1 -= speed;
+        const halfWidth1 = t1.scrollWidth / 2;
+        if (Math.abs(pos1) >= halfWidth1) {
+          pos1 = 0;
+        }
+        t1.style.transform = `translate3d(${pos1}px, 0, 0)`;
+
+        // Track 2 scrolls Right
+        pos2 += speed;
+        const halfWidth2 = t2.scrollWidth / 2;
+        if (pos2 >= 0) {
+          pos2 = -halfWidth2;
+        }
+        t2.style.transform = `translate3d(${pos2}px, 0, 0)`;
+      }
+      animId = requestAnimationFrame(loop);
+    };
+
+    animId = requestAnimationFrame(loop);
+
+    return () => {
+      cancelAnimationFrame(animId);
+      parent?.removeEventListener("mouseenter", onEnter);
+      parent?.removeEventListener("mouseleave", onLeave);
+    };
+  }, []);
+
   return (
     <div className="tech-stack-wrap">
       <div className="tech-stack-head">
@@ -66,8 +120,8 @@ export function TechStack() {
       </div>
 
       <div className="tech-slider-viewport">
-        {/* Row 1: Leftward continuous scroll */}
-        <div className="tech-marquee-track scroll-left">
+        {/* Row 1: Leftward continuous scroll via requestAnimationFrame */}
+        <div ref={track1Ref} className="tech-marquee-track js-track">
           {[...track1, ...track1].map(({ name, category, icon: Icon }, idx) => (
             <div key={`t1-${name}-${idx}`} className="tech-pill">
               <Icon size={18} className="tech-icon" />
@@ -79,8 +133,8 @@ export function TechStack() {
           ))}
         </div>
 
-        {/* Row 2: Rightward continuous scroll */}
-        <div className="tech-marquee-track scroll-right">
+        {/* Row 2: Rightward continuous scroll via requestAnimationFrame */}
+        <div ref={track2Ref} className="tech-marquee-track js-track">
           {[...track2, ...track2].map(({ name, category, icon: Icon }, idx) => (
             <div key={`t2-${name}-${idx}`} className="tech-pill">
               <Icon size={18} className="tech-icon" />

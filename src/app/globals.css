@@ -4308,3 +4308,9 @@ p:last-child {
   flex-shrink: 0;
   min-width: 230px;
 }
+
+
+.tech-marquee-track.js-track {
+  animation: none !important;
+  transition: none !important;
+}
