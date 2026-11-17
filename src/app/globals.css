@@ -4479,7 +4479,7 @@ p:last-child {
 }
 
 .orbit-node:hover {
-  transform: scale(1.1);
+  /* stationary on hover */
   border-color: var(--red-border);
   box-shadow: 0 12px 28px rgba(225, 29, 72, 0.25);
 }
@@ -4489,7 +4489,7 @@ p:last-child {
   border-color: var(--color-red);
   color: #fff;
   box-shadow: 0 12px 30px rgba(225, 29, 72, 0.4), 0 0 0 4px rgba(225, 29, 72, 0.2);
-  transform: scale(1.15);
+  /* stationary on active */
 }
 
 .orbit-node.active .node-num {
@@ -4507,7 +4507,7 @@ p:last-child {
   transform: translateX(-50%);
 }
 .node-pos-0.active {
-  transform: translateX(-50%) scale(1.15);
+  transform: translateX(-50%);
 }
 
 .node-pos-1 {
@@ -4516,7 +4516,7 @@ p:last-child {
   transform: translateY(-50%);
 }
 .node-pos-1.active {
-  transform: translateY(-50%) scale(1.15);
+  transform: translateY(-50%);
 }
 
 .node-pos-2 {
@@ -4525,7 +4525,7 @@ p:last-child {
   transform: translateX(-50%);
 }
 .node-pos-2.active {
-  transform: translateX(-50%) scale(1.15);
+  transform: translateX(-50%);
 }
 
 .node-pos-3 {
@@ -4534,7 +4534,7 @@ p:last-child {
   transform: translateY(-50%);
 }
 .node-pos-3.active {
-  transform: translateY(-50%) scale(1.15);
+  transform: translateY(-50%);
 }
 
 /* The Detail Card */
