@@ -20,6 +20,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_RW",
     siteName: site.name,
+    url: "https://erohweb.vercel.app",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "EROH Technology — Digital Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.description,
+    images: ["/og-image.png"],
   },
   icons: {
     icon: [
