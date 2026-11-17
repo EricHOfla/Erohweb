@@ -4314,3 +4314,400 @@ p:last-child {
   animation: none !important;
   transition: none !important;
 }
+
+
+/* ==========================================================================
+   CIRCULAR PROCESS ORBIT ARCHITECTURE
+   ========================================================================== */
+.circular-process-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 56px;
+  margin-top: 48px;
+}
+
+/* The Orbit Stage */
+.process-orbit-stage {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Outer Geometric Track Ring */
+.process-orbit-ring {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(225, 29, 72, 0.35);
+  box-shadow: 0 0 30px rgba(225, 29, 72, 0.08) inset, 0 0 30px rgba(11, 15, 25, 0.04);
+  animation: orbitRotate 90s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes orbitRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.process-pulse-dot {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-red);
+  box-shadow: 0 0 12px var(--color-red);
+  transform: translateX(-50%);
+}
+
+/* Central Core Hub */
+.process-orbit-hub {
+  position: relative;
+  z-index: 2;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: var(--color-dark);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 0 8px rgba(11, 15, 25, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.hub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--color-red);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.hub-step-num {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: -0.04em;
+}
+
+.hub-phase-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #E2E8F0;
+  margin: 4px 0 2px;
+  max-width: 160px;
+  line-height: 1.3;
+}
+
+.hub-phase-tag {
+  font-size: 10.5px;
+  color: var(--color-red);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Orbit Satellite Nodes */
+.orbit-node {
+  position: absolute;
+  z-index: 5;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  color: var(--ink);
+  box-shadow: 0 8px 24px rgba(11, 15, 25, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+}
+
+.orbit-node .node-num {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--muted);
+  letter-spacing: -0.02em;
+}
+
+.orbit-node .node-icon {
+  color: var(--ink-secondary);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.orbit-node .node-tooltip {
+  position: absolute;
+  top: -26px;
+  background: var(--color-dark);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: all 0.2s ease;
+}
+
+.orbit-node:hover .node-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.orbit-node:hover {
+  transform: scale(1.1);
+  border-color: var(--red-border);
+  box-shadow: 0 12px 28px rgba(225, 29, 72, 0.25);
+}
+
+.orbit-node.active {
+  background: var(--color-dark);
+  border-color: var(--color-red);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(225, 29, 72, 0.4), 0 0 0 4px rgba(225, 29, 72, 0.2);
+  transform: scale(1.15);
+}
+
+.orbit-node.active .node-num {
+  color: var(--color-red);
+}
+
+.orbit-node.active .node-icon {
+  color: var(--color-red);
+}
+
+/* 4 Radial Orbit Positions */
+.node-pos-0 {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.node-pos-0.active {
+  transform: translateX(-50%) scale(1.15);
+}
+
+.node-pos-1 {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.node-pos-1.active {
+  transform: translateY(-50%) scale(1.15);
+}
+
+.node-pos-2 {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.node-pos-2.active {
+  transform: translateX(-50%) scale(1.15);
+}
+
+.node-pos-3 {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.node-pos-3.active {
+  transform: translateY(-50%) scale(1.15);
+}
+
+/* The Detail Card */
+.process-detail-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 38px 34px 30px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.process-detail-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--color-red);
+}
+
+.detail-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.detail-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(225, 29, 72, 0.08);
+  border: 1px solid var(--red-border);
+  color: var(--color-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.detail-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--color-red);
+  text-transform: uppercase;
+}
+
+.detail-title {
+  font-size: 22px;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 3px 0 0;
+}
+
+.detail-description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-secondary);
+  margin: 0;
+}
+
+.detail-deliverables {
+  background: var(--canvas);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+}
+
+.deliverables-heading {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.deliverables-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.deliverables-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.deliverable-check {
+  color: var(--color-red);
+  flex-shrink: 0;
+}
+
+/* Stepper Bottom Row */
+.process-step-nav {
+  display: flex;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.step-nav-pill {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 12px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.step-nav-pill b {
+  color: var(--ink);
+}
+
+.step-nav-pill:hover {
+  border-color: var(--red-border);
+  color: var(--ink);
+}
+
+.step-nav-pill.active {
+  background: var(--color-dark);
+  border-color: var(--color-red);
+  color: #fff;
+}
+
+.step-nav-pill.active b {
+  color: var(--color-red);
+}
+
+@media (max-width: 900px) {
+  .circular-process-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .process-orbit-stage {
+    max-width: 360px;
+    height: 360px;
+  }
+  .process-orbit-ring {
+    width: 280px;
+    height: 280px;
+  }
+  .process-orbit-hub {
+    width: 170px;
+    height: 170px;
+  }
+  .hub-step-num {
+    font-size: 26px;
+  }
+  .hub-phase-title {
+    font-size: 11.5px;
+  }
+  .orbit-node {
+    width: 56px;
+    height: 56px;
+  }
+}

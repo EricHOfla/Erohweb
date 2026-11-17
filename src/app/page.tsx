@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { services, projects, impactMetrics, testimonials } from "@/data/content";
 import { TechStack } from "@/components/tech-stack";
+import { CircularProcess } from "@/components/circular-process";
 
 const icons = [MonitorSmartphone, Code2, Smartphone, Settings2, Palette, TrendingUp];
 
@@ -243,48 +244,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Approach: Light Canvas */}
+      {/* 6. Approach: Interactive Circular Lifecycle Orbit */}
       <section className="section">
-        <div className="container approach">
-          <div className="approach-img">
-            <Image src="/images/bg.jpg" alt="Technology collaboration" fill sizes="(max-width:760px) 100vw, 50vw" />
-            <span>
-              THINK
-              <br />
-              BUILD
-              <br />
-              GROW
-            </span>
-          </div>
-          <div>
-            <span className="eyebrow">HOW WE WORK</span>
-            <h2>Clear thinking. Careful execution.</h2>
+        <div className="container">
+          <div className="section-head center-head">
+            <span className="eyebrow">DEVELOPMENT METHODOLOGY</span>
+            <h2>How we develop software from idea to production.</h2>
             <p>
-              Good outcomes start with understanding. We keep the process collaborative, practical and
-              focused on what matters.
+              A circular, continuous lifecycle built on transparency, active feedback, and test-driven engineering.
+              Click any stage in the orbit below to explore key deliverables.
             </p>
-            <ul className="checks">
-              <li>
-                <Check />
-                Start with your goals and users
-              </li>
-              <li>
-                <Check />
-                Agree on scope and priorities
-              </li>
-              <li>
-                <Check />
-                Design, build and refine together
-              </li>
-              <li>
-                <Check />
-                Prepare for what comes next
-              </li>
-            </ul>
-            <Link className="text-link" href="/about">
-              Our approach <ArrowUpRight size={16} />
-            </Link>
           </div>
+
+          <CircularProcess />
         </div>
       </section>
 
