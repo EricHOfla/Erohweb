@@ -5,7 +5,7 @@ import { courses } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "Training",
-  description: "Explore practical digital skills and technology training areas.",
+  description: "Explore practical technology training in web development, mobile applications, and digital skills offered by EROH Technology in Kigali, Rwanda. Contact us to join an upcoming cohort.",
 };
 
 export default function Training() {

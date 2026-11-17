@@ -4009,3 +4009,219 @@ p:last-child {
     gap: 40px;
   }
 }
+
+
+/* ==========================================================================
+   PRICING SECTION
+   ========================================================================== */
+.pricing-tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+  align-items: start;
+}
+
+.pricing-tier {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 32px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: box-shadow 0.22s, transform 0.22s, border-color 0.22s;
+}
+
+.pricing-tier:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+  border-color: var(--red-border);
+}
+
+.pricing-tier-featured {
+  background: var(--color-dark);
+  border-color: var(--color-red);
+  box-shadow: 0 0 0 1px var(--color-red), var(--shadow-lg);
+  transform: translateY(-6px);
+}
+
+.pricing-tier-featured:hover {
+  transform: translateY(-10px);
+}
+
+.pricing-tier-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-red);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.pricing-tier-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pricing-tier-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+
+.pricing-tier-featured .pricing-tier-label {
+  color: var(--color-red);
+}
+
+.pricing-tier-name {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.pricing-tier-featured .pricing-tier-name {
+  color: #fff;
+}
+
+.pricing-tier-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.pricing-tier-featured .pricing-tier-desc {
+  color: var(--dark-text-muted);
+}
+
+.pricing-includes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.pricing-tier-featured .pricing-includes {
+  border-top-color: var(--dark-border-subtle);
+}
+
+.pricing-includes li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--ink-secondary);
+}
+
+.pricing-tier-featured .pricing-includes li {
+  color: var(--dark-text-muted);
+}
+
+.pricing-includes li svg {
+  color: var(--color-red);
+  flex-shrink: 0;
+}
+
+.pricing-timeline {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--muted);
+  padding: 10px 14px;
+  background: var(--canvas);
+  border-radius: var(--radius-sm);
+}
+
+.pricing-tier-featured .pricing-timeline {
+  background: var(--dark-elevated);
+  color: var(--dark-text-muted);
+}
+
+.pricing-timeline svg {
+  color: var(--color-red);
+  flex-shrink: 0;
+}
+
+.pricing-timeline b {
+  color: var(--ink);
+}
+
+.pricing-tier-featured .pricing-timeline b {
+  color: #fff;
+}
+
+.pricing-cta {
+  margin-top: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Pricing notes row */
+.pricing-note-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.pricing-note-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--ink-secondary);
+  line-height: 1.55;
+}
+
+.pricing-note-item svg {
+  color: var(--color-red);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pricing-note-item b {
+  display: block;
+  color: var(--ink);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+@media (max-width: 1024px) {
+  .pricing-tier-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pricing-tier-featured {
+    transform: none;
+  }
+  .pricing-tier-featured:hover {
+    transform: translateY(-3px);
+  }
+  .pricing-note-row {
+    grid-template-columns: 1fr;
+  }
+}

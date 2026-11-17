@@ -6,7 +6,7 @@ import { team } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "Our team",
-  description: "Meet the people behind EROH Technology.",
+  description: "Meet the people behind EROH Technology — a Kigali-based team of developers, designers and IT specialists building useful digital solutions across East Africa.",
 };
 
 export default function Team() {

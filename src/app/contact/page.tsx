@@ -7,7 +7,7 @@ import { site } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact EROH Technology in Kigali, Rwanda.",
+  description: "Get in touch with EROH Technology in Kigali, Rwanda. Send a project enquiry, ask about services, or start a conversation via email, phone, or WhatsApp.",
 };
 
 export default function Contact() {

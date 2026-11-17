@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Check, Compass, Layers, ShieldCheck, Zap } from "lucide-react";
+import { ArrowUpRight, Check, Compass, Layers, ShieldCheck, Zap, BadgeCheck, Clock, MessageSquare } from "lucide-react";
 import { services, engineeringProcess } from "@/data/content";
 
 export const metadata: Metadata = {
@@ -112,6 +112,108 @@ export default function Services() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Transparency Section */}
+      <section className="section">
+        <div className="container">
+          <div className="section-head center-head">
+            <span className="eyebrow">PRICING & PROCESS</span>
+            <h2>Transparent, project-based pricing.</h2>
+            <p>
+              Every project is different. We quote based on scope, complexity and timeline — no hidden
+              fees, no surprises. Here is how it typically works.
+            </p>
+          </div>
+
+          <div className="pricing-tier-grid">
+            <article className="pricing-tier">
+              <div className="pricing-tier-top">
+                <span className="pricing-tier-label">Starter</span>
+                <h3 className="pricing-tier-name">Landing Page or Brochure Site</h3>
+                <p className="pricing-tier-desc">
+                  A clean, responsive website for individuals, small businesses or new ventures that need a credible online presence fast.
+                </p>
+              </div>
+              <ul className="pricing-includes">
+                <li><Check size={14} /> Up to 5 pages</li>
+                <li><Check size={14} /> Mobile-responsive design</li>
+                <li><Check size={14} /> Contact form</li>
+                <li><Check size={14} /> Basic SEO setup</li>
+                <li><Check size={14} /> 1 round of revisions</li>
+              </ul>
+              <div className="pricing-timeline">
+                <Clock size={14} /> Typical delivery: <b>1 – 2 weeks</b>
+              </div>
+              <Link href="/contact?service=Starter+website" className="button outline pricing-cta">
+                Get a quote <ArrowUpRight size={15} />
+              </Link>
+            </article>
+
+            <article className="pricing-tier pricing-tier-featured">
+              <div className="pricing-tier-badge">Most Popular</div>
+              <div className="pricing-tier-top">
+                <span className="pricing-tier-label">Professional</span>
+                <h3 className="pricing-tier-name">Custom Web or Mobile Application</h3>
+                <p className="pricing-tier-desc">
+                  Purpose-built software with custom features, user authentication, dashboards, or third-party integrations shaped around your workflow.
+                </p>
+              </div>
+              <ul className="pricing-includes">
+                <li><Check size={14} /> Full discovery and planning phase</li>
+                <li><Check size={14} /> Custom UI/UX design</li>
+                <li><Check size={14} /> Web or mobile development</li>
+                <li><Check size={14} /> API and database integration</li>
+                <li><Check size={14} /> Testing and staged rollout</li>
+                <li><Check size={14} /> 2 rounds of revisions</li>
+              </ul>
+              <div className="pricing-timeline">
+                <Clock size={14} /> Typical delivery: <b>4 – 8 weeks</b>
+              </div>
+              <Link href="/contact?service=Custom+application" className="button pricing-cta">
+                Start a conversation <ArrowUpRight size={15} />
+              </Link>
+            </article>
+
+            <article className="pricing-tier">
+              <div className="pricing-tier-top">
+                <span className="pricing-tier-label">Enterprise</span>
+                <h3 className="pricing-tier-name">Ongoing Support & DevOps</h3>
+                <p className="pricing-tier-desc">
+                  Continuous delivery, infrastructure management, and technical partnership for teams that need a reliable technology partner long-term.
+                </p>
+              </div>
+              <ul className="pricing-includes">
+                <li><Check size={14} /> Server and cloud management</li>
+                <li><Check size={14} /> CI/CD pipeline setup</li>
+                <li><Check size={14} /> Security and uptime monitoring</li>
+                <li><Check size={14} /> Feature development retainer</li>
+                <li><Check size={14} /> Priority response SLA</li>
+              </ul>
+              <div className="pricing-timeline">
+                <Clock size={14} /> Engagement: <b>Monthly retainer</b>
+              </div>
+              <Link href="/contact?service=Enterprise+retainer" className="button outline pricing-cta">
+                Discuss your needs <ArrowUpRight size={15} />
+              </Link>
+            </article>
+          </div>
+
+          <div className="pricing-note-row">
+            <div className="pricing-note-item">
+              <BadgeCheck size={18} />
+              <span><b>Fixed-price quotes</b> — agreed in writing before work starts, no surprise invoices.</span>
+            </div>
+            <div className="pricing-note-item">
+              <MessageSquare size={18} />
+              <span><b>Free initial consultation</b> — tell us what you need, we will scope it honestly.</span>
+            </div>
+            <div className="pricing-note-item">
+              <Clock size={18} />
+              <span><b>Phased payment</b> — milestone-based payments available on larger projects.</span>
+            </div>
           </div>
         </div>
       </section>
