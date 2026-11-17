@@ -5,10 +5,9 @@ import {
   Compass,
   Layers,
   Code2,
+  CheckCircle2,
   Rocket,
-  ShieldCheck,
   Check,
-  ArrowRight,
   Sparkles,
 } from "lucide-react";
 
@@ -51,12 +50,26 @@ export const lifecycleSteps = [
     deliverables: [
       "Modern full-stack codebase",
       "Automated CI/CD pipelines",
-      "End-to-end unit & integration tests",
+      "Modular backend architecture",
     ],
     highlight: "Type-safe clean code",
   },
   {
     step: "04",
+    phase: "Testing & Quality Assurance",
+    tagline: "Test & Validate",
+    icon: CheckCircle2,
+    description:
+      "Rigorous end-to-end quality assurance covering unit testing, integration tests, cross-browser compatibility, security audits, and load stress testing.",
+    deliverables: [
+      "Automated unit & E2E test suites",
+      "Cross-device & browser verification",
+      "Security audit & vulnerability scans",
+    ],
+    highlight: "Bug-free guarantee",
+  },
+  {
+    step: "05",
     phase: "Deployment & Scale",
     tagline: "Launch & Monitor",
     icon: Rocket,
@@ -76,6 +89,13 @@ export function CircularProcess() {
   const activeStep = lifecycleSteps[activeIdx];
   const ActiveIcon = activeStep.icon;
 
+  // 5 equidistant points on a circle (angles: -90°, -18°, 54°, 126°, 198°)
+  // Center: (220, 220), Radius: 170px
+  // Node radius offset: 33px (half of 66px node size)
+  const total = lifecycleSteps.length;
+  const radius = 170; // px
+  const center = 220; // px
+
   return (
     <div className="circular-process-container">
       {/* Central Interactive Orbit Node */}
@@ -88,22 +108,30 @@ export function CircularProcess() {
         <div className="process-orbit-hub">
           <div className="hub-badge">
             <Sparkles size={14} />
-            <span>EROH LIFECYCLE</span>
+            <span>5-STEP LIFECYCLE</span>
           </div>
           <span className="hub-step-num">{activeStep.step}</span>
           <b className="hub-phase-title">{activeStep.phase}</b>
           <small className="hub-phase-tag">{activeStep.highlight}</small>
         </div>
 
-        {/* 4 Interactive Orbit Satellite Buttons */}
+        {/* 5 Interactive Orbit Satellite Buttons positioned around 360° circle */}
         {lifecycleSteps.map((s, idx) => {
           const Icon = s.icon;
           const isActive = idx === activeIdx;
+
+          // Start at top (-90 degrees), step by (360 / 5) = 72 degrees
+          const angleDeg = -90 + idx * (360 / total);
+          const angleRad = (angleDeg * Math.PI) / 180;
+          const x = center + radius * Math.cos(angleRad) - 33; // 33 is half node width
+          const y = center + radius * Math.sin(angleRad) - 33; // 33 is half node height
+
           return (
             <button
               key={s.step}
               type="button"
-              className={`orbit-node node-pos-${idx} ${isActive ? "active" : ""}`}
+              className={`orbit-node ${isActive ? "active" : ""}`}
+              style={{ left: `${x}px`, top: `${y}px` }}
               onClick={() => setActiveIdx(idx)}
               aria-label={`Step ${s.step}: ${s.phase}`}
             >
@@ -141,7 +169,7 @@ export function CircularProcess() {
           </ul>
         </div>
 
-        {/* Quick Stepper Bar */}
+        {/* Quick Stepper Bar with 5 steps */}
         <div className="process-step-nav">
           {lifecycleSteps.map((step, idx) => (
             <button
