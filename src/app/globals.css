@@ -4258,3 +4258,53 @@ p:last-child {
   object-fit: cover;
   display: block;
 }
+
+
+/* ==========================================================================
+   CONTINUOUS MARQUEE SLIDER FOR TECH STACK
+   ========================================================================== */
+.tech-slider-viewport {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  padding: 10px 0;
+}
+
+.tech-marquee-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  will-change: transform;
+}
+
+.tech-marquee-track.scroll-left {
+  animation: techMarqueeLeft 45s linear infinite;
+}
+
+.tech-marquee-track.scroll-right {
+  animation: techMarqueeRight 50s linear infinite;
+}
+
+.tech-slider-viewport:hover .tech-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes techMarqueeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes techMarqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.tech-marquee-track .tech-pill {
+  flex-shrink: 0;
+  min-width: 230px;
+}
