@@ -4283,11 +4283,11 @@ p:last-child {
 }
 
 .tech-marquee-track.scroll-left {
-  animation: techMarqueeLeft 45s linear infinite;
+  animation: techMarqueeLeft 24s linear infinite;
 }
 
 .tech-marquee-track.scroll-right {
-  animation: techMarqueeRight 50s linear infinite;
+  animation: techMarqueeRight 26s linear infinite;
 }
 
 .tech-slider-viewport:hover .tech-marquee-track {
