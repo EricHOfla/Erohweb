@@ -57,8 +57,8 @@ export function Header() {
               <Image
                 src="/logo.png"
                 alt="EROH Technology"
-                width={40}
-                height={40}
+                width={50}
+                height={50}
                 className="brand-logo-img"
                 priority
               />
