@@ -11,7 +11,7 @@ export function Footer() {
           <Link href="/" className="brand brand-light">
             <span className="brand-logo-wrap">
               <Image
-                src="/logo.jpg"
+                src="/logo.png"
                 alt="EROH Technology Logo"
                 width={36}
                 height={36}

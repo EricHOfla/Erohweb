@@ -55,7 +55,7 @@ export function Header() {
           <Link href="/" className="brand" onClick={() => setOpen(false)}>
             <span className="brand-logo-wrap">
               <Image
-                src="/logo.jpg"
+                src="/logo.png"
                 alt="EROH Technology"
                 width={40}
                 height={40}

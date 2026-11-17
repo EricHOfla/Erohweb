@@ -23,10 +23,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/logo.jpg" },
+      { url: "/logo.png" },
       { url: "/favicon.svg", type: "image/svg+xml" }
     ],
-    apple: "/logo.jpg"
+    apple: "/logo.png"
   },
   robots: {
     index: true,
@@ -47,7 +47,7 @@ const jsonLd = {
   name: site.name,
   legalName: site.legal,
   url: "https://erohweb.vercel.app",
-  logo: "https://erohweb.vercel.app/logo.jpg",
+  logo: "https://erohweb.vercel.app/logo.png",
   description: site.description,
   email: site.email,
   telephone: site.phone,
