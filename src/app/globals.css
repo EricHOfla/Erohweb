@@ -346,14 +346,14 @@ p:last-child {
 .nav-wrap {
   pointer-events: auto;
   width: 100%;
-  max-width: 1140px;
+  max-width: 1218px;
   margin: 0 auto;
   height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 8px 12px 8px 18px;
-  border-radius: var(--radius-full);
+  /* border-radius: var(--radius-full); */
   background: rgba(11, 15, 25, 0.88);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
